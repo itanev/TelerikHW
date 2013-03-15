@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<p id="resultNumbers">
+			
+		</p>
+		<script type="text/javascript">
+			var sequence = new Array(1,4,6,56,3,6,8,5,6,4,5,4,3,3,6,8,9,9,0);
+			
+			var min = sequence[0], max = sequence[0];
+			
+			for(var i = 1; i < sequence.length; i++)
+			{
+				if(sequence[i] > max)
+					max = sequence[i];
+					
+				if(sequence[i] < min)
+					min = sequence[i];
+			}
+			
+			document.getElementById("resultNumbers").innerHTML += "The min is: " + min + "<br />";
+			document.getElementById("resultNumbers").innerHTML += "The max is: " + max;
+		</script>
+	</body>
+</html>

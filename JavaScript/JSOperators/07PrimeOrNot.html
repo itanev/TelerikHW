@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var integer = 135;
+			var isPrime = true;
+			
+			for(var i = 2; i < Math.sqrt(integer); i++)
+			{
+				if(integer % i == 0)
+				{
+					alert("Not prime");
+					isPrime = false;
+					break;
+				}
+			}
+			
+			if(isPrime)
+			{
+				alert("Prime");
+			}
+		</script>
+	</body>
+</html>

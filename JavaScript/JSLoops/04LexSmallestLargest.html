@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<p id="resultNumbers">
+			
+		</p>
+		<script type="text/javascript">
+			var smallest, largest;
+			var firstUse = false;
+			
+			var objects = new Array(document, window, navigator);
+			
+			for(var k = 0; k < objects.length; k++)
+			{
+				for(var name in objects[k])
+				{
+					if(!firstUse)
+					{
+						smallest = name;
+						largest = name;
+					}
+					
+					if(firstUse)
+					{
+						for(var i = 0; i < smallest.length; i++)
+						{
+							if(smallest[i].toLowerCase() >= name[i].toLowerCase())
+							{
+								smallest = name;
+							}
+							else 
+							{
+								if(largest[i].toLowerCase() <= name[i].toLowerCase())
+								{
+									largest = name;
+								}
+								
+								break;
+							}						
+						}
+					}
+					
+					firstUse = true;
+				}
+				
+				alert(smallest + " is smallest in " + objects[k]);
+				alert(largest + " is largest in " + objects[k]);
+			}
+		</script>
+	</body>
+</html>

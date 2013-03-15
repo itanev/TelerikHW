@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var ones = new Array("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" );
+        var doubleDigits = new Array( " ", "ten", "twenty", "thirty", "fourthy", "fifty", "sixty", "seventy", "eighty", "ninety" );
+        var betweenTenAndTwenty = new Array(" ", "eleven", "twelve", "thirteen", "fourteen", "fifeteen", "sixteen", "seventeen", "eightteen", "nineteen" );
+
+        var number, o, dd, h;
+        number = prompt("Enter number in the interval [0..999]: ");
+        number = parseInt(number);
+		
+		var result = ' ';
+
+        h = Math.floor((number / 100) % 10);
+        dd = Math.floor((number / 10) % 10);
+        o = Math.floor((number % 100) % 10);
+
+        if (h == 0)
+        {
+            if (dd == 0)
+            {
+                result += ones[number];
+            }
+            else
+            {
+                if (o > 0)
+                {
+                    result += doubleDigits[dd] + " " + ones[o];
+                }
+                else
+                {
+                    result += doubleDigits[dd];
+                }
+            }
+        }
+        else
+        {
+            if (dd == 0)
+            {
+                if (o == 0)
+                {
+                    result += ones[h] + " hundred";
+                }
+                else
+                {
+                    result += ones[h] + " hundred and " + ones[o];
+                }
+            }
+            else if (dd == 1)
+            {
+                if (o == 0)
+                {
+                    result += ones[h] + " hundred and " + doubleDigits[dd];
+                }
+                else
+                { 
+                    result += ones[h] + " hundred and " + betweenTenAndTwenty[o];
+                }
+            }
+            else
+            {
+                if (o == 0)
+                {
+                    result += ones[h] + " hundred and " + doubleDigits[dd];
+                }
+                else
+                {
+                    result += ones[h] + " hundred " + doubleDigits[dd] + " " + ones[o];
+                }
+            }
+        }
+		
+		alert(result);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var pointX = 1;
+			var pointY = 1;
+			if(Math.pow((pointX-1),2) + Math.pow((pointY-1),2) < Math.pow(3,2))
+			{
+				if(pointY > 1 || pointY < -1)
+				{
+					alert("The point is in the circle and out of the rectangle.");
+				}
+				else
+				{
+					alert("The point is in the rectangle.");
+				}
+			}
+			else
+			{
+				alert("The point is not in the circle.");
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var first = -2, second = -3, third = 2;
+			
+			if( first > 0 && second > 0 && third < 0 ||
+				first > 0 && second < 0 && third > 0 ||
+				first < 0 && second > 0 && third > 0 ||
+				first < 0 && second < 0 && third < 0 )
+				{
+					alert("-");
+				}
+			
+			if( first > 0 && second > 0 && third > 0 ||
+				first < 0 && second < 0 && third > 0 ||
+				first > 0 && second < 0 && third < 0 ||
+				first < 0 && second > 0 && third < 0 )
+				{
+					alert("+");
+				}
+			
+			if(first == 0 && second == 0 && third == 0)
+			{
+				alert("No sign");
+			}
+				
+		</script>
+	</body>
+</html>

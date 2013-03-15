@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var first = 3, second = 9, third = 10;
+			
+			if(first > second)
+				if(first > third)
+				{
+					if(second > third)
+						alert(first + " " + second + " " + third);
+					else
+						alert(first + " " + third + " " + second);
+				}
+			
+			if(second > first)
+				if(second > third)
+				{
+					if(first > third)
+						alert(second + " " + first + " " + third);
+					else
+						alert(second + " " + third + " " + first);
+				}
+			
+			if(third > first)
+				if(third > second)
+				{
+					if(first > second)
+						alert(third + " " + first + " " + second);
+					else 
+						alert(third + " " + second + " " + first);
+				}
+					
+		</script>
+	</body>
+</html>

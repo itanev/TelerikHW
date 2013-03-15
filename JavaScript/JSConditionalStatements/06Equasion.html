@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a = prompt("Enter a", "a=");
+			var b = prompt("Enter b", "b=");
+			var c = prompt("Enter c", "c=");
+			
+			a = parseInt(a);
+			b = parseInt(b);
+			c = parseInt(c);
+			
+			var d = b*b - 4*a*c;
+			
+			if( d < 0 )
+				alert("No roots");
+			else if( d == 1 )
+				alert( -b / 2*a );
+			else
+				alert("x1 = " + ((-b + Math.sqrt(d)) / 2*a) + '\n' + 
+						"x2 = " + (-b - Math.sqrt(d)) / 2*a);
+		</script>
+	</body>
+</html>
