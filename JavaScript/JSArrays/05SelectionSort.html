@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<p id="resultNumbers">
+			
+		</p>
+		<script type="text/javascript">
+			var arr = prompt("Enter array numbers, split by comma(,)");
+			
+			arr = arr.split(',');
+			
+			var min = arr[0], minIndex = 0; el = 0;
+			
+			//selection sort without helper array
+			for (var numEl = 0; numEl < arr.length-1; numEl++)
+			{
+				min = arr[numEl];
+				minIndex = numEl;
+				for (var i = numEl+1; i < arr.length; i++)
+				{
+					if (arr[i] < min)
+					{
+						min = arr[i];
+						minIndex = i;
+					}
+				}
+				
+				//swap
+				el = arr[numEl];
+				arr[numEl] = min;
+				arr[minIndex] = el;
+			}
+			
+			//print result
+			for(var i = 0; i < arr.length; i++)
+			{
+				document.getElementById("resultNumbers").innerHTML += arr[i] + ', ';
+			}
+		</script>
+	</body>
+</html>

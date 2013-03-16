@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<p id="resultNumbers">
+			
+		</p>
+		<script type="text/javascript">
+			var arr = prompt("Enter array numbers, split by comma(,)");
+			
+			arr = arr.split(',');
+			
+			//sorting the array
+			arr = arr.sort();
+			
+			for(var i = 0; i < arr.length; i++)
+			{
+				document.getElementById("resultNumbers").innerHTML += arr[i] + ', ';
+			}
+			
+			var element = prompt("Enter element to find");
+			
+			function SearchElementBinary(a, min, max, item)
+			{
+				var mid = min + parseInt((max - min) / 2);
+				
+				if(mid >= a.length) 
+				{
+					return "Element not found.";
+				}
+
+				if (a[mid] > item)
+				{
+					return SearchElementBinary(a, min, mid - 1, item);
+				}
+				else if (a[mid] < item)
+				{
+					return SearchElementBinary(a, mid + 1, max, item);
+				}
+				else
+				{
+					return "Element found at index " + mid + " in the sorted array.";
+				}
+			}
+				
+			alert( SearchElementBinary(arr, 0, arr.length, element));
+				
+		</script>
+	</body>
+</html>

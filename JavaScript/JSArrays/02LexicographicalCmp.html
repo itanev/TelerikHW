@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<p id="resultNumbers">
+			
+		</p>
+		<script type="text/javascript">
+			var firstCharArray = prompt("Enter first char array");
+			var secondCharArray = prompt("Enter second char array");
+				
+			var equals = true;
+			
+			for(var i = 0; i < firstCharArray.length; i++)
+			{
+				if(firstCharArray[i] != secondCharArray[i])
+				{
+					equals = false;
+					break;
+				}
+			}
+			
+			if(equals)
+				alert("The arrays are the same, lexicographically.");
+			else
+				alert("The arrays are diferent.");
+		</script>
+	</body>
+</html>

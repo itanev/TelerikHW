@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<p id="resultNumbers">
+			
+		</p>
+		<script type="text/javascript">
+			var arr = prompt("Enter array numbers, split by comma(,)");
+			
+			arr = arr.split(',');
+			var count = 1, maxLength = 1, maxStartIndex = 0;
+			
+			for (var i = 1; i < arr.length; i++)
+			{
+				if (arr[i] == arr[i - 1])
+				{
+					count++;
+					if (count >= maxLength)
+					{
+						maxLength = count;
+						maxStartIndex = i-maxLength+1;
+					}
+				}
+				else
+				{
+					count = 1;
+				}
+			}
+
+			for (var i = maxStartIndex; i < maxStartIndex + maxLength; i++)
+			{
+				document.getElementById("resultNumbers").innerHTML += arr[i] + ', ';
+			}
+		</script>
+	</body>
+</html>
