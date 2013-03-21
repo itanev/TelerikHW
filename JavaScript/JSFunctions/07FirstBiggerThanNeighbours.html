@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<div id="resultNumbers"></div>
+		
+		<script type="text/javascript">
+			var numbers = prompt("Enter numbers splited by comma.");
+			var arrOfNumbers = numbers.split(",");
+			
+			//find the first num bigger than his neighbours
+			for(var i = 0; i < arrOfNumbers.length; i++)
+			{
+				if(CheckNeighbours(arrOfNumbers, i))
+				{
+					alert( "The first one is at index " + i );
+					break;
+				}
+			}
+			
+			//function
+			function CheckNeighbours(a, position)
+			{
+				if (position <= 0 || position >= a.length - 1)
+					return false;
+				else
+				{
+					if (a[position] > a[parseInt(position) - 1] && a[position] > a[parseInt(position) + 1])
+						return true;
+					else
+						return false;
+				}
+
+				return false;
+			}
+		</script>
+	</body>
+</html>

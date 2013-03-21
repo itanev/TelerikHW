@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<p id="resultNumbers">
+			
+		</p>
+		<script type="text/javascript">
+			var text = prompt("Enter some text.");
+			var word = prompt("Enter word to count.");
+			
+			//call function
+			alert(countWord(text, word, true));	//case sensitive
+			//alert(countWord(text, word));	//case insensitive
+			
+			//function
+			function countWord(text, word, caseSensitive)
+			{
+				var words = text.split(' ');	//get words
+				
+				switch(arguments.length)
+				{
+					case 2:	
+						return caseInSensitiveCmp(words, word);
+						break;
+					default:
+						if(caseSensitive)
+						{
+							return caseSensitiveCmp(words, word);
+						}
+						else
+						{
+							return caseInSensitiveCmp(words, word);
+						}
+						break;
+				}
+			}
+			
+			//helper functions
+			function caseSensitiveCmp(words, word)
+			{
+				var counter = 0;
+				
+				for(var i = 0; i < words.length; i++)
+				{
+					if(words[i] == word)
+						counter++;
+				}
+				
+				return counter;
+			}
+			
+			function caseInSensitiveCmp(words, word)
+			{
+				var counter = 0;
+				
+				for(var i = 0; i < words.length; i++)
+				{
+					if(words[i].toLowerCase() == word.toLowerCase())
+						counter++;
+				}
+				
+				return counter;
+			}
+		</script>
+	</body>
+</html>

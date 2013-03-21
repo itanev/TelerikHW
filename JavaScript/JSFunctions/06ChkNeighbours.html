@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<div id="resultNumbers"></div>
+		
+		<script type="text/javascript">
+			var numbers = prompt("Enter numbers splited by comma.");
+			var pos = prompt("Enter position");
+			var arrOfNumbers = numbers.split(",");
+			
+			//call function
+			alert(CheckNeighbours(arrOfNumbers, pos));
+			
+			//function
+			function CheckNeighbours(a, position)
+			{
+				if (position <= 0 || position >= a.length - 1)
+					return "the number at position " + position + " is not bigger than his neighbours.";
+				else
+				{
+					if (a[position] > a[parseInt(position) - 1] && a[position] > a[parseInt(position) + 1])
+						return "the number at position " + position + " is bigger than his neighbours.";
+					else
+						return "the number at position " + position + "is not bigger than his neighbours.";
+				}
+
+				return "the number at position " + position + "is not bigger than his neighbours.";
+			}
+		</script>
+	</body>
+</html>
