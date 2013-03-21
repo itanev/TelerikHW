@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="JustPacMan.Actor">
+    <Position X="4.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAIAAAACAAAAAACAAAAAgAAACAA=</HashCode>
+      <FileName>Actor.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="location" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="JustPacMan.Ghost">
+    <Position X="3.25" Y="8" Width="2" />
+    <TypeIdentifier>
+      <HashCode>UQAAAAAAAIAAIAAAAAAAAABAQAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Ghost.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="strategy" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="JustPacMan.Pacman">
+    <Position X="6" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAggAAAIQIAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Pacman.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="score" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="JustPacMan.BfsStrategy" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>BfsStrategy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="JustPacMan.ConsoleManager">
+    <Position X="9.25" Y="6.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AgAAEIABAiEQAgAAIAAAQAEAEAAAAAcBAABiAEEBAAA=</HashCode>
+      <FileName>ConsoleManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="inputDevice" />
+      <Field Name="pacman" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="maze" />
+      <Field Name="ghosts" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="JustPacMan.Keyboard" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAIAAAAAAAAAgAAAAAAAAAAgAIAA=</HashCode>
+      <FileName>Keyboard.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="JustPacMan.MazeObject">
+    <Position X="13" Y="5.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAAAAAAAAAAAAABAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>MazeObject.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="JustPacMan.PacmanException" Collapsed="true">
+    <Position X="19.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PacmanException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="JustPacMan.Score">
+    <Position X="6" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAAAAAAAAAAAAIAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Score.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="JustPacMan.Location">
+    <Position X="1.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAwAAAAQACAAEAAoAAAAAAAAAAAiA=</HashCode>
+      <FileName>Location.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="JustPacMan.IMovingStrategy">
+    <Position X="0.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IMovingStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="JustPacMan.IAutomotive" Collapsed="true">
+    <Position X="19.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IAutomotive.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="JustPacMan.IInputDevice">
+    <Position X="13" Y="8.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAIAAAAAAAAAgAAAAAAAAAAgAIAA=</HashCode>
+      <FileName>IInputDevice.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="JustPacMan.MazeObjectType">
+    <Position X="16.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAEAAAAAAAAAAEAAAABAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MazeObjectType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
