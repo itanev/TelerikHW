@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<div id="resultNumbers"></div>
+		
+		<script type="text/javascript">
+			var obj = document;	//object to check
+			var prop = prompt("Enter property");
+			
+			alert(hasProperty(obj, prop));
+			
+			//function to check for prop
+			function hasProperty(object, property)
+			{
+				for(var prop in object)
+				{
+					if(prop == property)
+					{
+						return true;
+					}
+				}
+				
+				return false;
+			}
+		</script>
+	</body>
+</html>

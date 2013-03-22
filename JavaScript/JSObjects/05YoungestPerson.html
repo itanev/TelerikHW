@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<div id="resultNumbers"></div>
+		
+		<script type="text/javascript">
+			var persons = [
+			  {firstname : "Gosho", lastname: "Petrov", age: 32}, 
+			  {firstname : "Bay", lastname: "Ivan", age: 81},
+			  {firstname : "Pesho", lastname: "Ivan", age: 27},
+			  {firstname : "Kiro", lastname: "Ivan", age: 45}];
+			  
+			//call function
+			findYoungestPerson(persons);
+			  
+			//function  
+			function findYoungestPerson(people)
+			{
+				var minAge = people[0].age;
+				var youngestPerson = people[0];
+				
+				for(var i = 0; i < people.length; i++)
+				{
+					if(minAge > people[i].age)
+					{
+						minAge = people[i].age;
+						youngestPerson = people[i];
+					}
+				}
+				alert(youngestPerson.firstname + ' ' + youngestPerson.lastname);
+			}
+
+		</script>
+	</body>
+</html>

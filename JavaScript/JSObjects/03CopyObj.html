@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<div id="resultNumbers"></div>
+		
+		<script type="text/javascript">
+			var test = copyObject(document);
+			for(var prop in test)
+				alert(prop);
+			
+			//copy function
+			function copyObject(obj)
+			{		
+				var newObj = {};
+				
+				for(var prop in obj)
+				{
+					newObj[prop] = obj[prop];
+				}
+				
+				return newObj;
+			}
+		</script>
+	</body>
+</html>

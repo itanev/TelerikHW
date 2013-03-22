@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<div id="resultNumbers"></div>
+		
+		<script type="text/javascript">
+			var persons = [
+			  {firstname : "Gosho", lastname: "Petrov", age: 32}, 
+			  {firstname : "Bay", lastname: "Ivan", age: 81},
+			  {firstname : "Gosho", lastname: "Ivan", age: 27},
+			  {firstname : "Kiro", lastname: "Ivan", age: 45}];
+			  
+			var test = group(persons, "lastname");
+			
+			alert(test['Ivan'][2].firstname);
+			  
+			//function
+			function group(arrObjects, prop)
+			{
+				var groupedPersons = {};
+				
+				for(var i = 0; i < arrObjects.length; i++)
+				{
+					groupedPersons[arrObjects[i][prop]] = [arrObjects[i]]; 
+					
+					for(var k = 0; k < arrObjects.length; k++)
+					{
+						if( k == i ) continue;
+						
+						if(arrObjects[i][prop] == arrObjects[k][prop])
+						{
+							groupedPersons[arrObjects[i][prop]].push(arrObjects[k]);
+						}
+					}
+				}
+				
+				return groupedPersons;
+			}
+		</script>
+	</body>
+</html>

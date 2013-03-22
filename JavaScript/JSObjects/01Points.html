@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<div id="resultNumbers"></div>
+		
+		<script type="text/javascript">
+			var a = Point(1,1);
+			var b = Point(1,1);
+			var c = Point(1,1);
+			
+			canFormTriangle(a,b,c);
+		
+			//create object Point
+			function Point(xCoord, yCoord)
+			{
+				return {
+					x:xCoord,
+					y:yCoord,
+					getDistance: function(otherPoint) {
+						return Math.sqrt((this.x-otherPoint.x) * (this.x-otherPoint.x) + 
+							   (this.y-otherPoint.y) * (this.y-otherPoint.y));
+					}
+				}
+			};
+			
+			function canFormTriangle(a,b,c)
+			{
+				if( (a.getDistance(b) + b.getDistance(c)) > c.getDistance(a) &&
+					(a.getDistance(b) + a.getDistance(c)) > b.getDistance(c) &&
+					(a.getDistance(c) + b.getDistance(c)) > a.getDistance(b))
+				{
+					alert("The points form a triangle");
+				}
+				else
+					alert("The points doesn't form a triangle");
+			}
+		</script>
+	</body>
+</html>
