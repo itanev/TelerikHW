@@ -1,0 +1,45 @@
+ul {
+	position: absolute;
+	list-style-type: none;
+	margin: 0;
+	margin-left: 100px;
+	padding: 0;
+	border-left: 0;
+	float: left;
+	height: 50px;
+	box-sizing: border-box;
+	background: url("menu-gradient.png") repeat-x;
+}
+
+ul li {
+	display: inline;
+	border-left: 1px solid #cfcfcf;
+	padding: 15px 0;
+}
+
+ul li:first-child {
+	border-left: 0;
+	background: url("menu-left-part.png") top left no-repeat;
+	margin-left: -5px;
+}
+
+ul li:last-child {
+	background: url("menu-right-part.png") top right no-repeat;
+	margin-right: -5px;
+	line-height: 50px;
+}
+
+a{
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 16px;
+	color: #a7162e;
+	line-height: 48px;
+	padding: 15px;
+	border-left: 1px solid white;
+}
+
+#first {
+	border-left: 0;
+}
