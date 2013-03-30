@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<div id="resultNumbers"></div>
+		<script type="text/javascript">
+			var text = prompt("Enter text");
+			
+			alert(replaceAnchor(text));
+			
+			//target match
+			function replaceAnchor(text)
+			{
+				return text.replace(/<a(.*)>(.*)<\/a>/gi, replaceTag);
+			}
+			
+			//tag replace
+			function replaceTag(match)
+			{
+				match = match.replace(/<a/gi, '[URL');
+				match = match.replace(/>/gi, ']');
+				match = match.replace(/<\/a/gi, '[/URL');
+				return match;
+			}
+		</script>
+	</body>
+</html>

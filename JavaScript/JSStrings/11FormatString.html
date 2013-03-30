@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<div id="resultNumbers"></div>
+		<script type="text/javascript">
+			
+			var format = "{0}, {1}, {0} text {2}";
+			var str = stringFormat(format,1,"Pesho","Gosho");
+			
+			alert(str);
+			
+			function stringFormat(format)
+			{
+				var i = 0;
+				
+				for(i = 0; i < 30; i++)
+				{
+					var regex = new RegExp("[{]" + i + "[}]", "gi");
+					format = format.replace(regex, arguments[i+1]);
+				}
+				
+				return format;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<div id="resultNumbers"></div>
+		<script type="text/javascript">
+			var text = prompt("Enter text");
+			var substr = prompt("Enter substring");
+			alert(search(text, substr));
+			
+			//function to perform the search
+			function search(text, substr)
+			{
+				text = text.toLowerCase();
+				substr = substr.toLowerCase();
+				
+				return (text.split(substr)).length - 1;
+			}
+			
+		</script>
+	</body>
+</html>

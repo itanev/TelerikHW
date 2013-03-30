@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<div id="resultNumbers"></div>
+		<script type="text/javascript">
+			var str = prompt("Enter some string");
+			alert(str + " -> " + reverse(str));
+			
+			//reverse function
+			function reverse(str)
+			{
+				var i = 0;
+				var result = '';
+				
+				for(i = 0; i < str.length; i++)
+				{
+					result += str[str.length-i-1];
+				}
+				
+				return result;
+			}
+		</script>
+	</body>
+</html>

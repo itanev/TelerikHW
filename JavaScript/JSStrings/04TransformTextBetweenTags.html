@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<div id="resultNumbers"></div>
+		<script type="text/javascript">
+			var text = prompt("Enter some text");
+			
+			alert(replaceTextBetweenTags(text));
+			
+			//uses simple regex
+			function replaceTextBetweenTags(text)
+			{
+				//transform text between tags
+				var result = text.replace(/<upcase>(.*?)<\/upcase>/g, toUpper);
+				result = result.replace(/<lowcase>(.*?)<\/lowcase>/g, toLower);
+				result = result.replace(/<mixcase>(.*?)<\/mixcase>/g, toMixed);
+				
+				//delete tags
+				result = result.replace(/<upcase>/gi, '');
+				result = result.replace(/<\/upcase>/gi, '');
+				result = result.replace(/<lowcase>/gi, '');
+				result = result.replace(/<\/lowcase>/gi, '');
+				result = result.replace(/<mixcase>/gi, '');
+				result = result.replace(/<\/mixcase>/gi, '');
+				
+				return result;
+			}
+			
+			//function for text transforming
+			function toUpper(match) { return match.toUpperCase(); }
+			function toLower(match) { return match.toLowerCase(); }
+			function toMixed(match) 
+			{
+				var i = 0;
+				var result = '';
+				for(i = 0; i < match.length; i++)
+				{
+					if(Math.floor(Math.random()*10+1) % 2 === 0)
+					{
+						result += match[i].toLowerCase();
+					}
+					else
+					{
+						result += match[i].toUpperCase();
+					}
+				}
+				
+				return result;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<div id="resultNumbers"></div>
+		<script type="text/javascript">
+			var text = prompt("Enter some text");
+			
+			alert(extractContent(text));
+			
+			function extractContent(text)
+			{
+				//regex gotten from stackoverflow - not universly perfect
+				return text.replace(/<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/gi, '');
+			}
+		</script>
+	</body>
+</html>

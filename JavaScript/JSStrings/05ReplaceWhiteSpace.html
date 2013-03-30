@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<div id="resultNumbers"></div>
+		<script type="text/javascript">
+			var text = prompt("Enter some text");
+			
+			alert(replaceWhiteSpace(text));
+			
+			//uses simple regex
+			function replaceWhiteSpace(text)
+			{
+				return text.replace(/\s/g, '&nbsp;');
+			}
+		</script>
+	</body>
+</html>

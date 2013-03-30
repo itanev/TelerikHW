@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<div id="resultNumbers"></div>
+		<script type="text/javascript">
+			var url = prompt("Enter some URL");
+			
+			//catch the JSON object
+			var parts = parseURL(url);
+			
+			//access elements of JSON object
+			alert('protocol: ' + parts['protocol'] + '\n' +
+			      'server: ' + parts['server'] + '\n' + 
+				  'resource:' + parts['resource']);
+			
+			//function to parse URL and return JSON object
+			function parseURL(url)
+			{
+				var protocol = url.split('://')[0];
+				
+				var server = url.split('://')[1];
+				server = server.split('/')[0];
+				
+				var resource = url.split('://')[1];
+				resource = resource.split('/')[1];
+				
+				return {
+					protocol: protocol,
+					server: server,
+					resource: resource
+				};
+			}
+		</script>
+	</body>
+</html>

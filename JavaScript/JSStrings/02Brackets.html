@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<div id="resultNumbers"></div>
+		<script type="text/javascript">
+			var expr = prompt("Enter expression");
+			alert(checkBrackets(expr));
+			
+			//function to check if brackets are put correctly
+			function checkBrackets(expr)
+			{
+				var isValid = 0;
+				var i = 0;
+				
+				//base cases for incorrectly put brackets
+				if(expr[0] === ')') return false;
+				if(expr[expr.length-1] === '(') return false;
+				
+				//check if brackets are correct
+				for(i = 0; i < expr.length; i++)
+				{
+					if(expr[i] === '(') isValid++;
+					else if(expr[i] === ')') isValid--;
+				}
+				
+				if(isValid === 0) return true;
+				else return false;
+			}
+		</script>
+	</body>
+</html>
