@@ -1,0 +1,11 @@
+#6d64a3 - stars color 
+#e6def5 - menu background and sidebar borders	
+#0000cc - menu text color
+#59518c - footer background color
+#c41e89 - article title color
+#4b3e82 - article short descr color and text
+#f9f4fd - right sidebar background
+#f2f3f7 - left sidebar background
+#006699 - left sidebar text color
+#f9f4fd - content area background
+#424284 - right sidebar menu-header color 

@@ -1,0 +1,251 @@
+body {
+	margin: 20px 0 10px 0;
+	padding: 0;
+	
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 0%, #dfd3b5 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#dfd3b5)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#dfd3b5 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 0%,#dfd3b5 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 0%,#dfd3b5 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ffffff 0%,#dfd3b5 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dfd3b5',GradientType=0 ); /* IE6-9 */
+
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+.more-btm {
+	color: #5f4e22;
+	font-size: 12px;
+	font-weight: bolder;
+	text-decoration: underline;
+}
+
+#wrapper {
+	position: relative;
+	width: 736px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#wrapper > header {
+	width: 100%;
+	height: 266px;
+	background: white url('header.png') no-repeat;
+}
+
+/* aside */
+aside {
+	margin-top: -1px;
+	width: 221px;
+	float: left;
+	border-left: 9px solid #9a8a65;
+	background-color: white;
+}
+
+aside:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+aside nav ul {
+	position: relative;
+	margin-top: -122px;
+	width: 221px;
+	background-color: #2a2a2a;
+	border-bottom: 20px solid #cdc4aa;
+}
+
+aside nav ul li {
+	border-bottom: 1px solid #787878;
+	padding: 10px 0 0 30px;
+}
+
+aside nav ul li:first-child a{
+	color: #dab773;
+}
+
+aside nav ul li a {
+	border-left: 1px solid #787878;
+	padding-left: 10px;
+	color: #f2f2f2;
+}
+
+aside nav ul li a span {
+	display: inline-block;
+	position: relative;
+	top: -3px;
+}
+
+aside nav ul li .arrow {
+	position: absolute;
+	right: 35px;
+}
+
+#commercials {
+	width: 202px;
+	background: url('aside-gardient.png') repeat-y;
+	padding: 20px;
+}
+
+#commercials li {
+	width: 180px;
+	color: #908362;
+	font-size: 13px;
+	text-align: justify;
+	border-bottom: 1px dotted #e1e0dd;
+	padding-top: 15px;
+}
+
+#commercials li:first-child {
+	padding-top: 20px;
+}
+
+#commercials li article header {
+	color: #806f47;
+	font-weight: bolder;
+	font-size: 12px;
+}
+
+#support {
+	position: relative;
+	top: -30px;
+	display: inline-block;
+	width: 221px;
+	height: 92px;
+	background: url('aside-support.png') no-repeat;
+}
+
+aside a.more-btm {
+	position: relative;
+	top: -120px;
+	left: 170px;
+} 
+
+/* aside end */
+
+/* section */
+#content-area {
+	background-color: white;
+	margin-top: -1px;
+	padding: 25px 0 0 25px;
+	width: 64%;
+	text-align: justify;
+	color: #8f8262;
+	float: left;
+	border-right: 9px solid #9a8a65;
+}
+
+#content-area:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+#content-area > header h1 {
+	position: relative;
+	color: #c39419;
+	font-weight: 500;
+	border-bottom: 1px solid #f6f3ec;
+}	
+
+#content-area > article {
+	margin-top: -20px;
+	padding-top: 20px;
+	padding-right: 25px;
+	border-top: 1px solid #cfbd93;
+}
+
+#content-area > article img {
+	padding: 5px;
+	border: 7px solid #e7e0ce;
+	border-radius: 10px;
+	box-shadow: 0px 0px 0px 1px #dad1b8;
+	float: left;
+	margin-right: 20px;
+}
+
+#content-area article p {
+	display: inline;
+	font-size: 13px;
+}
+
+#content-area .more-btm {
+	margin: 10px;
+	float: right;
+}
+
+#content-area > section ul li {
+	display: inline;
+	float: left;
+	width: 216px;
+	padding-right: 15px;
+}
+
+#content-area > section ul li:last-child {
+	margin: 0;
+}
+
+#content-area > section > header h3 {
+	margin-top: 50px;
+	padding-bottom: 15px;
+	color: #d3bb79;
+	font-weight: 500;
+	border-bottom: 1px solid #f6f3ec;
+}
+
+#content-area > section > ul {
+	padding-top: 15px;
+	border-top: 1px solid #d8c9a7;
+	margin-top: -19px;
+}
+
+.profile-img-title {
+	border: 7px solid #e7e0ce;
+	border-radius: 10px;
+	box-shadow: 0px 0px 0px 1px #dad1b8;
+	float: left;
+	margin-right: 20px;
+}
+
+.profile-img-title img {
+	padding: 3px;
+}
+
+.profile-img-title h5 {
+	position: relative;
+	top: -10px;
+	letter-spacing: -1px;
+	margin: 5px 0 -3px 0;
+	text-align: center;
+	border-top: 3px solid #c6bea9;
+}
+
+/* section end */
+
+/*footer*/
+footer {
+	float: left;
+	margin-top: -1px;
+	width: 717px;
+	background-color: #dfd4b5;
+	color: #806f47;
+	font-weight: bold;
+	text-align: center;
+	padding: 15px 0;
+	border: 9px solid #9a8a65;
+	border-top: 0;
+	border-radius: 0 0 10px 10px;
+}
+/*footer end*/
