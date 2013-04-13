@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Simple calc</title>
+		<link rel='stylesheet' type='text/css' href='PHPFormStyle.css' />
+	</head>
+	<body>
+		<form action='PHPForm.php' method='GET' name='calc' onsubmit="return validateForm()" >
+			<ul>
+				<li>
+					<label for='firstNumber' id='fNumLabel'>First Number: </label>
+						<input type='text' name='firstNumber' id='firstNumber'/>
+				</li>
+				<li>
+					<label for='sign' id='signLabel'>Aritmethic Operation: </label>
+						<input type='text' name='sign' id='sign'/>
+				</li>
+				<li>
+					<label for='secondNumber' id='sNumLabel'>Second Number: </label>
+						<input type='text' name='secondNumber' id='secondNumber'/>
+				</li>
+				<li>
+					<input type='submit' value='='/>
+				</li>
+			</ul>
+		</form>
+		
+		<script type='text/javascript' src='PHPFormFrontEndValidation.js'></script>
+	</body>
+</html>
