@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<style>
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			border: 2px solid black;
+			float: left;
+		}
+		li {
+			width: 200px;
+			height: 50px;
+			border: 1px solid gray;
+			padding: 10px;
+		}
+		input {
+			float: right;
+		}	
+	</style>
+	<body>
+		<ul>
+			<li>
+				Font color:<input type='color' id='fontColor' onchange='changeFontColor()'/>
+			</li>
+			<li>
+				Background color:<input type='color' id='backgroundColor' onchange='changeBackgroundColor()'/>
+			</li>
+			<li>
+				<textarea>	
+				</textarea>
+			</li>
+		</ul>
+		<script type='text/javascript' src='source.js'> </script>
+	</body>
+</html>
