@@ -24,38 +24,22 @@
 
     public class Size
     {
-        private double width, height;
-
         public Size(double width, double height)
         {
-            this.width = width;
-            this.height = height;
+            this.Width = width;
+            this.Height = height;
         }
 
         public double Width 
-        {
-            get 
-            {
-                return this.width;
-            }
-
-            set
-            {
-                this.width = value;
-            }
+        { 
+            get; 
+            private set; 
         }
- 
-        public double Height 
-        {
-            get 
-            {
-                return this.height;
-            }
 
-            set
-            {
-                this.height = value;
-            }
+        public double Height
+        {
+            get; 
+            private set;
         }
     }
 }
