@@ -5,7 +5,7 @@
 
     public class VarsAndExpressions
     {
-        static void Main()
+        public static void Main()
         {
             //use functions
         }

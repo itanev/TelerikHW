@@ -5,7 +5,7 @@
 
     public class VarsAndExpressions
     {
-        static void Main()
+        public static void Main()
         {
             //use functions here
         }
@@ -15,8 +15,8 @@
             var angleSinus = Math.Abs(Math.Sin(angleOfRotation));
             var angleCosinus = Math.Abs(Math.Cos(angleOfRotation));
 
-            var width = angleCosinus * size.Width + angleSinus * size.Height;
-            var height = angleSinus * size.Width + angleCosinus * size.Height;
+            var width = (angleCosinus * size.Width) + (angleSinus * size.Height);
+            var height = (angleSinus * size.Width) + (angleCosinus * size.Height);
 
             return new Size(width, height);
         }
@@ -26,12 +26,19 @@
     {
         private double width, height;
 
+        public Size(double width, double height)
+        {
+            this.width = width;
+            this.height = height;
+        }
+
         public double Width 
         {
             get 
             {
                 return this.width;
             }
+
             set
             {
                 this.width = value;
@@ -44,16 +51,11 @@
             {
                 return this.height;
             }
+
             set
             {
                 this.height = value;
             }
-        }
-
-        public Size(double width, double height)
-        {
-            this.width = width;
-            this.height = height;
         }
     }
 }
