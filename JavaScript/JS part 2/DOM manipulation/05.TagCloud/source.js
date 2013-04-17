@@ -35,7 +35,7 @@ function generateElement(tag, conn, object, minFontSize, maxFontSize) {
 	var text = document.createTextNode(object.name);
 	
 	//just a formula for generating random fontSize
-	var randomFontSize = Math.floor(Math.random() * (maxFontSize - object.count) + minFontSize - object.count);
+	var randomFontSize = Math.floor(Math.random() * (maxFontSize - object.count - minFontSize) + minFontSize - object.count);
 	
 	//generating random margin between 1 - 10 px
 	var randomMargin = Math.floor(Math.random() * 10 + 1);

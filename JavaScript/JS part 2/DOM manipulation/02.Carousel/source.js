@@ -2,7 +2,7 @@ function generateRandomNumber(to, from) {
 	if(!from) from = 0;
 	if(!to) to = 100;
 	
-	return Math.floor(Math.random() * to + from);
+	return Math.floor(Math.random() * (to - from) + from);
 }
 
 function generateColor() {
