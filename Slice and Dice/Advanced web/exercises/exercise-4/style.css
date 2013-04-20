@@ -1,0 +1,39 @@
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	width: 570px;
+}
+
+ul li {
+	display: inline;
+	margin-left: 5px;
+	margin-top: 5px;
+	height: 200px;
+	float: left;
+}
+
+ul li p {
+	width: 135px;
+	text-align: center;
+}
+
+.sprite {
+	background: url("../../common/images/icons-sprite.png");
+	position: relative;
+	width: 135px;
+	min-height: 130px;
+}
+
+#green-arrow { background-position: 0 0; }
+#yellow-arrow { background-position: -150px 0; }
+#cloud { background-position: -300px 0; }
+#db { background-position: -425px 0; }
+#pc { background-position: 0 -130px; }
+#firewall { background-position: -150px -130px; }
+#home { background-position: -300px -130px; }
+#hub-switch { background-position: -430px -130px; }
+#ID { background-position: -10px -270px; }
+#laptop { background-position: -160px -270px; }
+#fast-network { background-position: -300px -270px; }
+#PDA { background-position: -440px -270px; }
