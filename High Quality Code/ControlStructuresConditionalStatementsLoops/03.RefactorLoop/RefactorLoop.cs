@@ -14,18 +14,14 @@
             {
                 if (i % 10 == 0)
                 {
-                    Console.WriteLine("{0}, ", array[i]);
-
                     if (array[i] == expectedValue)
                     {
                         expectedValueFound = true;
                         break;
                     }
                 }
-                else
-                {
-                    Console.WriteLine("{0}, ", array[i]);
-                }
+
+                Console.WriteLine("{0}, ", array[i]);
             }
             // More code here.
             if (expectedValueFound)

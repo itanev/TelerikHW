@@ -25,11 +25,11 @@
 
         public void Cook()
         {
-            this.AddToBowl(this.CurrentPotato);
-            this.AddToBowl(this.CurrentCarrot);
+            this.AddToSalad(this.CurrentPotato);
+            this.AddToSalad(this.CurrentCarrot);
         }
 
-        private void AddToBowl(Vegetable currentVegetable)
+        private void AddToSalad(Vegetable currentVegetable)
         {
             Peel(currentVegetable);
             Cut(currentVegetable);
