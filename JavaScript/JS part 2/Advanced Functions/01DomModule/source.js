@@ -9,8 +9,7 @@ var domModule = (function () {
 		
 	function appendChild(element, selector) {
 		var parent = document.querySelector(selector);
-		var newChild = document.createElement(element);
-		parent.appendChild(newChild);
+		parent.appendChild(element);
 	}
 
 	function removeChild(tag, optionalSelector) {
