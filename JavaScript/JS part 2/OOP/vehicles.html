@@ -1,0 +1,21 @@
+<script src='vehicles.js'></script>
+<script>
+	var landVehicle = new LandVehicle(4);
+	//alert(landVehicle.getSpeed());
+	
+	var airVehicle = new AirVehicle();
+	airVehicle.addNozzle(true);
+	airVehicle.addNozzle(false);
+	airVehicle.addNozzle(true);
+	alert(airVehicle.getSpeed());
+	
+	var waterVehicles = new WaterVehicles();
+	waterVehicles.addPropeller(12, true);
+	waterVehicles.addPropeller(12, true);
+	alert(waterVehicles.getSpeed());
+	
+	var amphibiousVehicle = new AmphibiousVehicle('water');
+	amphibiousVehicle.addPropeller(12, true);
+	amphibiousVehicle.addPropeller(12, false);
+	alert(amphibiousVehicle.getSpeed());
+</script>
