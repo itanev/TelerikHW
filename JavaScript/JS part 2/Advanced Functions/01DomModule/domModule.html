@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<ul id='list'>
+			<li>click</li>
+			<li>first2</li>
+			<li>first3</li>
+		</ul>
+		<script type="text/javascript" src="source.js"></script>
+		<script type="text/javascript">
+			//test
+			var li = document.createElement('li');
+			var li2 = document.createElement('li');
+
+			domModule.appendChild('li', '#list');
+			domModule.appendChild('li', '#list');
+			domModule.removeChild('ul', 'li:last');
+			domModule.appendToBuffer('#list', li);
+			domModule.appendToBuffer('#list', li2);
+			domModule.removeChild('ul', 'li:last');
+
+			domModule.addHandler('ul li:first', 'click', function () {
+				alert('Clicked on first li');
+			});
+		</script>
+	</body>
+</html>
