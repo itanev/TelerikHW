@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test area</title>
+	</head>
+	<body>
+		<script type="text/javascript" src="source.js"></script>
+		<script type="text/javascript">
+			//generate list
+			var treeView = controls.treeView("div.tree-view");
+			var jsnode = treeView.addNode();
+			jsnode.content("JavaScript");
+			//needs this line to create new ul subNode
+			var subNode = jsnode.addNode();	
+			var js1subnode = subNode.addNode();
+			js1subnode.content("JavaScript - part 1");
+			var js2subnode = subNode.addNode();
+			js2subnode.content("JavaScript - part 2");
+			var jslibssubnode = subNode.addNode();
+			jslibssubnode.content("JS Libraries");
+			var jsframeworksnode = subNode.addNode();
+			jsframeworksnode.content("JS Frameworks and UI");
+			
+			var webnode = treeView.addNode();
+			webnode.content("Web");
+			
+			//apply tree view functionality
+			var liTags = document.getElementsByTagName('li');
+
+			var i = 0;
+
+			for(i = 0; i < liTags.length; i++) {
+				liTags[i].addEventListener('click', revealSubList);
+			}
+
+			function revealSubList(event) {
+				if(typeof this.getElementsByTagName('ul')[0] == 'undefined') return 0;
+
+				if( this === event.target && 
+					this.getElementsByTagName('ul')[0].style.display == 'block') {
+						this.getElementsByTagName('ul')[0].style.display = 'none';
+				}
+				else {
+					this.getElementsByTagName('ul')[0].style.display = 'block';
+				}
+			}
+		</script>
+	</body>
+</html>
