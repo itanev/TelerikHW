@@ -1,0 +1,62 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Carousel</title>
+    <style>
+        .carousel {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-panels {
+            position: relative;
+            width: 10000%;
+        }
+
+        .carousel-panel {
+            float: left;
+            width: 1%;
+        }
+
+        .carousel-arrow-left,
+        .carousel-arrow-right {
+            position: absolute;
+            z-index: 1;
+        }
+
+        .carousel-arrow-left { left: 0; height: 100px; }
+        .carousel-arrow-right { right: 0; height: 100px;}
+
+        .carousel-animated .carousel-panels {
+            -webkit-transition: left .6s cubic-bezier(.86, 0, .07, 1);
+               -moz-transition: left .6s cubic-bezier(.86, 0, .07, 1);
+                 -o-transition: left .6s cubic-bezier(.86, 0, .07, 1);
+                    transition: left .6s cubic-bezier(.86, 0, .07, 1);
+        }
+
+        .carousel-my {
+            margin: 0 auto;
+            padding: 10px 0;
+            width: 400px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <article class="carousel carousel-animated carousel-my">
+        <button class="carousel-arrow-left">&lt;</button>
+
+        <div class="carousel-panels">
+            <img src='imgs/img1.jpg' class="carousel-panel" />
+            <img src='imgs/img2.jpg' class="carousel-panel" />
+            <img src='imgs/img3.jpg' class="carousel-panel" />
+        </div>
+
+        <button class="carousel-arrow-right">&gt;</button>
+    </article>
+
+    <script src='source.js'></script>
+</body>
+</html>

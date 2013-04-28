@@ -1,0 +1,36 @@
+#tasks li p {
+	display: inline;
+	margin-right: 20px;
+}
+
+#tasks {
+	list-style-type: none;
+	margin: 5px;
+	padding: 20px;
+}
+
+#tasks {
+	border: 1px solid black;
+	background-color: #eee;
+	float: left;
+}
+
+#title {
+	margin: -10px 0 10px -10px;
+	border-bottom: 1px solid black;
+	font-weight: bold;
+}
+
+#tasks li:not(:first-child) {
+	padding-bottom: 10px;
+}
+
+#remove {
+	background-color: red;
+	border: 1px solid black;
+	font-color: bold;
+}
+
+button {
+	cursor: pointer;
+}
