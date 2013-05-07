@@ -46,20 +46,20 @@ class ExceptionsHomework
         return result.ToString();
     }
 
-    public static void CheckPrime(int number)
+    public static bool CheckPrime(int number)
     {
-        if (number < 0)
-        {
-            throw new ArgumentException("The number must be positive!");
-        }
+        bool isPrime = true;
 
         for (int divisor = 2; divisor <= Math.Sqrt(number); divisor++)
         {
             if (number % divisor == 0)
             {
-                throw new ArgumentException("The number is not prime!");
+                isPrime = false;
+                break;
             }
         }
+
+        return isPrime;
     }
 
     static void Main()
