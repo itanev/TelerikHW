@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.ReadAndMakeCalcsOfIntSequence", "01.ReadAndMakeCalcsOfIntSequence\01.ReadAndMakeCalcsOfIntSequence.csproj", "{7520D85D-BB60-4480-88C8-E35A654DC2AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.ReverseNumbersStack", "02.ReverseNumbersStack\02.ReverseNumbersStack.csproj", "{FD08A192-9967-444A-9E79-82633BE02F04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.ReadAndSortsNumbers", "03.ReadAndSortsNumbers\03.ReadAndSortsNumbers.csproj", "{3DCBC494-5727-4B5E-849B-7AB270F784B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.LongestSubsequence", "04.LongestSubsequence\04.LongestSubsequence.csproj", "{29D21878-691C-471D-B15E-C5375C9EF5C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{19F7E3E1-38C5-4EDE-B6AD-FDBE365AC6FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.RemoveNegativeNumbers", "05.RemoveNegativeNumbers\05.RemoveNegativeNumbers.csproj", "{61C336B1-7177-42CB-A33D-38EB5AB102E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.RemoveNumbersThatOccurOddNumberOfTimes", "06.RemoveNumbersThatOccurOddNumberOfTimes\06.RemoveNumbersThatOccurOddNumberOfTimes.csproj", "{9B18AB10-E2CB-48DC-B598-AEB5826C1BE4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7520D85D-BB60-4480-88C8-E35A654DC2AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7520D85D-BB60-4480-88C8-E35A654DC2AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7520D85D-BB60-4480-88C8-E35A654DC2AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7520D85D-BB60-4480-88C8-E35A654DC2AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD08A192-9967-444A-9E79-82633BE02F04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD08A192-9967-444A-9E79-82633BE02F04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD08A192-9967-444A-9E79-82633BE02F04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD08A192-9967-444A-9E79-82633BE02F04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DCBC494-5727-4B5E-849B-7AB270F784B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DCBC494-5727-4B5E-849B-7AB270F784B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DCBC494-5727-4B5E-849B-7AB270F784B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DCBC494-5727-4B5E-849B-7AB270F784B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29D21878-691C-471D-B15E-C5375C9EF5C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29D21878-691C-471D-B15E-C5375C9EF5C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29D21878-691C-471D-B15E-C5375C9EF5C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29D21878-691C-471D-B15E-C5375C9EF5C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19F7E3E1-38C5-4EDE-B6AD-FDBE365AC6FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19F7E3E1-38C5-4EDE-B6AD-FDBE365AC6FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19F7E3E1-38C5-4EDE-B6AD-FDBE365AC6FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19F7E3E1-38C5-4EDE-B6AD-FDBE365AC6FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61C336B1-7177-42CB-A33D-38EB5AB102E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61C336B1-7177-42CB-A33D-38EB5AB102E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61C336B1-7177-42CB-A33D-38EB5AB102E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61C336B1-7177-42CB-A33D-38EB5AB102E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B18AB10-E2CB-48DC-B598-AEB5826C1BE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B18AB10-E2CB-48DC-B598-AEB5826C1BE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B18AB10-E2CB-48DC-B598-AEB5826C1BE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B18AB10-E2CB-48DC-B598-AEB5826C1BE4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
