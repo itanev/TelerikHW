@@ -63,7 +63,7 @@ namespace _06.RemoveNumbersThatOccurOddNumberOfTimes
             {
                 if (currNumber != sortedNumbers[i])
                 {
-                    AddNumberIfOccuredEvenNumberOfTimes(currNumber, occurTimes, numbersToRemove);
+                    AddNumberIfOccuredOddNumberOfTimes(currNumber, occurTimes, numbersToRemove);
 
                     currNumber = sortedNumbers[i];
                     occurTimes = 1;
@@ -73,12 +73,12 @@ namespace _06.RemoveNumbersThatOccurOddNumberOfTimes
                 occurTimes++;
             }
 
-            AddNumberIfOccuredEvenNumberOfTimes(currNumber, occurTimes, numbersToRemove);
+            AddNumberIfOccuredOddNumberOfTimes(currNumber, occurTimes, numbersToRemove);
 
             return numbersToRemove;
         }
 
-        private static void AddNumberIfOccuredEvenNumberOfTimes(int currNumber, int occurTimes, List<int> resultNumbers)
+        private static void AddNumberIfOccuredOddNumberOfTimes(int currNumber, int occurTimes, List<int> resultNumbers)
         {
             if (occurTimes % 2 != 0)
             {
