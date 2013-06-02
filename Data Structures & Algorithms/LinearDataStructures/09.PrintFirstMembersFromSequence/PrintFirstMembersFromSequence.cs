@@ -13,8 +13,7 @@ namespace _09.PrintFirstMembersFromSequence
             const int numMembersToPrint = 50;
 
             Queue<int> baseMembers = new Queue<int>();
-            baseMembers.Enqueue(n);
-            int currCoefficient = baseMembers.Dequeue();
+            int currCoefficient = n;
 
             List<int> resultNumbers = new List<int>();
             resultNumbers.Add(n);
