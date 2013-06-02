@@ -16,8 +16,8 @@ namespace _11.LinkedList
             myList.Add(3);
             myList.Add(2);
 
+            Console.WriteLine(myList);
             myList.RemoveFirst();
-
             Console.WriteLine(myList);
         }
     }

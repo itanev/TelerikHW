@@ -7,11 +7,13 @@ namespace _11.LinkedList
 {
     public class LinkedList<T> : IEnumerable<T>
     {
-        public ListItem<T> FirstElement { get; set; }
+        public ListItem<T> CurrentElement { get; set; }
+        private ListItem<T> firstElement;
 
         public LinkedList()
         {
-            this.FirstElement = null;
+            this.CurrentElement = null;
+            this.firstElement = null;
         }
 
         public void Add(T item)
@@ -19,22 +21,26 @@ namespace _11.LinkedList
             ListItem<T> currItem = new ListItem<T>();
             currItem.Value = item;
 
-            currItem.NextItem = FirstElement;
-            FirstElement = currItem;
+            currItem.NextItem = CurrentElement;
+            CurrentElement = currItem;
         }
 
         public void RemoveFirst()
         {
-            FirstElement = FirstElement.NextItem;
+            CurrentElement = CurrentElement.NextItem;
         }
 
         public IEnumerator<T> GetEnumerator()
         {
-            while (FirstElement != null)
+            this.firstElement = this.CurrentElement;
+
+            while (CurrentElement != null)
             {
-                yield return FirstElement.Value;
-                FirstElement = FirstElement.NextItem;
+                yield return CurrentElement.Value;
+                CurrentElement = CurrentElement.NextItem;
             }
+
+            this.CurrentElement = this.firstElement;
         }
 
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
@@ -48,7 +54,7 @@ namespace _11.LinkedList
 
             foreach (var item in this)
             {
-                listAsString.AppendFormat("{0} ", FirstElement.Value);
+                listAsString.AppendFormat("{0} ", CurrentElement.Value);
             }
 
             return listAsString.ToString();

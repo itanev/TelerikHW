@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.FindShortestSequenceOfOp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.LinkedList", "11.LinkedList\11.LinkedList.csproj", "{DE3EA8A5-6F66-4A1C-BF5C-EA6B3723623C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12.Stack", "12.Stack\12.Stack.csproj", "{7BBA11E1-7E1D-438D-A9C6-E837693B27E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13.Queue", "13.Queue\13.Queue.csproj", "{6FD1967C-724C-4CEB-88F8-C14BE362BB70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +83,14 @@ Global
 		{DE3EA8A5-6F66-4A1C-BF5C-EA6B3723623C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE3EA8A5-6F66-4A1C-BF5C-EA6B3723623C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE3EA8A5-6F66-4A1C-BF5C-EA6B3723623C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BBA11E1-7E1D-438D-A9C6-E837693B27E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BBA11E1-7E1D-438D-A9C6-E837693B27E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BBA11E1-7E1D-438D-A9C6-E837693B27E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BBA11E1-7E1D-438D-A9C6-E837693B27E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FD1967C-724C-4CEB-88F8-C14BE362BB70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FD1967C-724C-4CEB-88F8-C14BE362BB70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FD1967C-724C-4CEB-88F8-C14BE362BB70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FD1967C-724C-4CEB-88F8-C14BE362BB70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
