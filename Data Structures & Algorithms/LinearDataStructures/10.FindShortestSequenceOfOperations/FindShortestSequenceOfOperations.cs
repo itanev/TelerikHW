@@ -24,26 +24,39 @@ namespace _10.FindShortestSequenceOfOperations
             List<Operation> operations = new List<Operation> { Operation.TwoTimes, Operation.PlusTwo, Operation.PlusOne };
 
             Stack<int> sequence = new Stack<int>();
-            sequence.Push(n);
+            sequence.Push(m);
 
             int currNumber = sequence.Peek();
             int currOperationIndex = 0;
+
+            if (n == 1 && currNumber % 2 != 0)
+            {
+                currOperationIndex = 1;
+            }
+
             Operation currOperation = operations[currOperationIndex];
 
-            while (currNumber != m)
+            while (currNumber != n)
             {
+                if (currNumber % 2 != 0 && currOperationIndex != 1)
+                {
+                    currOperationIndex = 2;
+                }
+
+                currOperation = operations[currOperationIndex];
+
                 switch (currOperation)
                 {
                     case Operation.TwoTimes:
-                        currNumber *= 2;
+                        currNumber /= 2;
                         currOperationIndex = 0;
                         break;
                     case Operation.PlusTwo:
-                        currNumber += 2;
+                        currNumber -= 2;
                         currOperationIndex = 1;
                         break;
                     case Operation.PlusOne:
-                        currNumber += 1;
+                        currNumber -= 1;
                         currOperationIndex = 2;
                         break; 
                     default:
@@ -51,7 +64,7 @@ namespace _10.FindShortestSequenceOfOperations
                         break;
                 }
 
-                if (currNumber <= m)
+                if (currNumber >= n)
                 {
                     sequence.Push(currNumber);
                     currOperationIndex = 0;
@@ -61,8 +74,6 @@ namespace _10.FindShortestSequenceOfOperations
                     currNumber = sequence.Peek();
                     currOperationIndex++;
                 }
-
-                currOperation = operations[currOperationIndex];
             }
 
             Console.WriteLine(string.Join("->", sequence));
