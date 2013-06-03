@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12.Stack", "12.Stack\12.Sta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13.Queue", "13.Queue\13.Queue.csproj", "{6FD1967C-724C-4CEB-88F8-C14BE362BB70}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14.Labyrinth", "14.Labyrinth\14.Labyrinth.csproj", "{FCE3B097-0258-405E-BD20-8E6A60A5945D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,10 @@ Global
 		{6FD1967C-724C-4CEB-88F8-C14BE362BB70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FD1967C-724C-4CEB-88F8-C14BE362BB70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FD1967C-724C-4CEB-88F8-C14BE362BB70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCE3B097-0258-405E-BD20-8E6A60A5945D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCE3B097-0258-405E-BD20-8E6A60A5945D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCE3B097-0258-405E-BD20-8E6A60A5945D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCE3B097-0258-405E-BD20-8E6A60A5945D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
