@@ -32,9 +32,22 @@ namespace _01.BasicTreeTasks
             Console.WriteLine("The longest path is: {0}", longestPath);
 
             //5.Find paths with given sum S of their nodes. From the root.
+            Console.Write("Enter sum: ");
             int S = int.Parse(Console.ReadLine());
             Console.WriteLine("All paths with sum {0}", S);
             FindAllPathsOfGivenSum(root, S);
+
+            //6. Find all subtrees with given sum S of their nodes. 
+            // Not my own implimentation
+            Console.Write("Enter sum: ");
+            int sum = int.Parse(Console.ReadLine());
+            List<Node<int>> subTrees = new List<Node<int>>();
+            SubTreeWithSum(root, subTrees, sum);
+
+            foreach (var node in subTrees)
+            {
+                Console.WriteLine(node.Value);
+            }
         }
 
         private static void CreateLinks(int N, List<Node<int>> nodes)
@@ -122,11 +135,11 @@ namespace _01.BasicTreeTasks
             return maxPath + 1;
         }
 
-        public static void FindAllPathsOfGivenSum(Node<int> node, int Sum)
+        public static void FindAllPathsOfGivenSum(Node<int> node, int sum)
         {
             path.Add(node.Value);
 
-            if (Sum == path.Sum())
+            if (sum == path.Sum())
             {
                 Console.WriteLine(string.Join(", ", path));
                 path.RemoveRange(1, path.Count - 1);
@@ -135,13 +148,34 @@ namespace _01.BasicTreeTasks
 
             foreach (var childNode in node.Children)
             {
-                FindAllPathsOfGivenSum(childNode, Sum);
+                FindAllPathsOfGivenSum(childNode, sum);
             }
 
             if (path.Count > 1)
             {
                 path.RemoveAt(path.Count - 1);
             }
+        }
+
+        private static void SubTreeWithSum(Node<int> root, List<Node<int>> listOfSubTrees, int targetSum)
+        {
+            foreach (var child in root.Children)
+            {
+                if (targetSum == CheckSubTreeSum(child, child.Value))
+                {
+                    listOfSubTrees.Add(child);
+                }
+                SubTreeWithSum(child, listOfSubTrees, targetSum);
+            }
+        }
+
+        private static int CheckSubTreeSum(Node<int> subRoot, int sum)
+        {
+            foreach (var node in subRoot.Children)
+            {
+                sum += CheckSubTreeSum(node, node.Value);
+            }
+            return sum;
         }
     }
 }
