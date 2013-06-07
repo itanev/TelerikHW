@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test area</title>
+</head>
+<body>
+	<p id="school-info">
+	</p>
+	<script src="person.js"></script>
+	<script src="student.js"></script>
+	<script src="teacher.js"></script>
+	<script src="school.js"></script>
+	<script>
+		var schoolInfoConn = document.getElementById("school-info");
+		var school = new schoolNS.School("SU", "Sofia", classes);
+		schoolInfoConn.innerHTML = school.getInfo();
+		console.log(schoolNS.name);
+	</script>
+</body>
+</html>
