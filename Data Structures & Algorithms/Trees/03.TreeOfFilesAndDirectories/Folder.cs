@@ -18,11 +18,9 @@ namespace _03.TreeOfFilesAndDirectories
             this.ChildFolders = new List<Folder>();
         }
 
-        public Folder(string name, List<File> files, List<Folder> childFolders) 
+        public Folder(string name)
             : this()
         {
-            this.Files = files;
-            this.ChildFolders = childFolders;
             this.Name = name;
         }
     }
