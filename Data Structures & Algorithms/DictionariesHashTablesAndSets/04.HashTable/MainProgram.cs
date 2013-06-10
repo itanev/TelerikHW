@@ -21,10 +21,10 @@ namespace _04.HashTable
             Console.WriteLine(myHashTable["Ivan"]);
 
             // Problem with foreach
-            foreach (var item in myHashTable)
-            {
-                Console.WriteLine(item);
-            }
+            //foreach (var item in myHashTable)
+            //{
+            //    Console.WriteLine(item);
+            //}
         }
     }
 }

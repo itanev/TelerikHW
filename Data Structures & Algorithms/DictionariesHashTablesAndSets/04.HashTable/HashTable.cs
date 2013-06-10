@@ -90,7 +90,7 @@ namespace _04.HashTable
                 }
             }
 
-            throw new ArgumentException("No element with this key!");
+            throw new ArgumentException("No item with this key!");
         }
 
         public void Remove(K key)
