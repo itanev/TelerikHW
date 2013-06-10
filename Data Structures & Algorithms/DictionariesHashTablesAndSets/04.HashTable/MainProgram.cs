@@ -16,14 +16,15 @@ namespace _04.HashTable
             myHashTable.Add("Ivan", 20);
 
             myHashTable["Gosho"] = 12;
+            myHashTable["Stamat"] = 12;
 
             Console.WriteLine(myHashTable["Ivan"]);
 
             // Problem with foreach
-            //foreach (var item in myHashTable)
-            //{
-            //    Console.WriteLine(item);
-            //}
+            foreach (var item in myHashTable)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }

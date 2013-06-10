@@ -142,11 +142,6 @@ namespace _04.HashTable
 
         public IEnumerator<KeyValuePair<K, T>> GetEnumerator()
         {
-            return this.GetEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
             foreach (var list in this.hashHolder)
             {
                 if (list != null)
@@ -155,9 +150,13 @@ namespace _04.HashTable
                     {
                         yield return listItem;
                     }
-                    break;
                 }
             }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
         }
     }
 }
