@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.PriorityQueue", "01.PriorityQueue\01.PriorityQueue.csproj", "{D9F5E023-8DC3-4540-AABF-E353A37BC6BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Products", "02.Products\02.Products.csproj", "{67330C6A-C531-4819-9293-A6948518A43A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9F5E023-8DC3-4540-AABF-E353A37BC6BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9F5E023-8DC3-4540-AABF-E353A37BC6BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9F5E023-8DC3-4540-AABF-E353A37BC6BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9F5E023-8DC3-4540-AABF-E353A37BC6BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67330C6A-C531-4819-9293-A6948518A43A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67330C6A-C531-4819-9293-A6948518A43A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67330C6A-C531-4819-9293-A6948518A43A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67330C6A-C531-4819-9293-A6948518A43A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
