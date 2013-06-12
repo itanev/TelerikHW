@@ -129,7 +129,19 @@ namespace _04.HashTable
 
                 for (int i = 0; i < this.Count; i++)
                 {
-                    hashHolder[i] = currHashHolder[i];
+                    if (currHashHolder[i] != null)
+                    {
+                        foreach (var item in currHashHolder[i])
+                        {
+                            var index = GetIndex(item.Key);
+                            if (this.hashHolder[index] == null)
+                            {
+                                this.hashHolder[index] = new LinkedList<KeyValuePair<K, T>>();
+                            }
+
+                            this.hashHolder[index].AddLast(item);
+                        }
+                    }
                 }
             }
         }

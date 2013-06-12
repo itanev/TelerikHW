@@ -13,11 +13,11 @@ namespace _04.HashTable
             HashTable<string, int> myHashTable = new HashTable<string, int>();
 
             myHashTable.Add("Pesho", 10);
-            myHashTable.Add("Ivan1", 20);
+            myHashTable.Add("Ivan1", 5);
             myHashTable.Add("Ivan2", 20);
             myHashTable.Add("Ivan3", 20);
             myHashTable.Add("Ivan4", 20);
-            myHashTable.Add("Ivan5", 20);
+            myHashTable.Add("Ivan5", 5);
             myHashTable.Add("Ivan6", 20);
             myHashTable.Add("Ivan7", 20);
             myHashTable.Add("Ivan8", 20);
@@ -36,7 +36,7 @@ namespace _04.HashTable
             myHashTable["Gosho"] = 12;
             myHashTable["Stamat"] = 12;
 
-            Console.WriteLine(myHashTable["Ivan19"]);
+            Console.WriteLine(myHashTable["Ivan1"]);
 
             // Problem with foreach
             //foreach (var item in myHashTable)
