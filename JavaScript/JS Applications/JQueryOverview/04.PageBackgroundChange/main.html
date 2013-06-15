@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Color Picker</title>
+	<link rel="stylesheet" href="css/colorpicker.css" type="text/css" />
+    <link rel="stylesheet" media="screen" type="text/css" href="css/layout.css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/colorpicker.js"></script>
+    <script type="text/javascript" src="js/eye.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/layout.js?ver=1.0.2"></script>
+</head>
+<body>
+	<div id='color-picker'></div>
+
+	<script>
+		$('#color-picker').ColorPicker({
+			flat: true,
+			onChange: function(hsb, hex, rgb) {
+				$(document.body).css("background", "#" + hex);
+			}
+		});
+	</script>
+</body>
+</html>

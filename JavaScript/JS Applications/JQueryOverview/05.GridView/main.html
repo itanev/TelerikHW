@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Grid View</title>
+</head>
+<body>
+	<div id='conn'></div>
+	<!-- sry no css :) -->
+	<script src='../jquery.js'></script>
+	<script src='source.js'></script>
+	<script>
+		var currGridView = gridView.create("#conn", "#gridTable");
+		currGridView.addHeader("person", "semiperson", "not person");
+		currGridView.addRow("pesho", "gosho", "tosho");
+		currGridView.addRow("pesho", "gosho", "tosho");
+		var someTr = currGridView.addRow("pesho", "gosho", "tosho");
+		var nested = someTr.create('#conn table tr:last', "#nestedGrid");
+		nested.addHeader("person", "semiperson", "not person");
+		nested.addRow("kiro", "stamat", "ivan");
+		nested.addRow("kiro", "stamat", "ivan");
+		nested.addRow("kiro", "stamat", "ivan");
+		nested.addRow("kiro", "stamat", "ivan");
+
+		currGridView.addRow("new pesho", "new gosho", "new tosho");
+	</script>
+</body>
+</html>
