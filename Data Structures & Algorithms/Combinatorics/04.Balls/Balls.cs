@@ -2,19 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace _11.PermutationsWithRepetition
+namespace _04.Balls
 {
-    class Program
+    class Balls
     {
-        static void Main(string[] args)
+        static int counter = 0;
+
+        static void Main()
         {
-            Permute(new int[] { 1, 1, 1, 5, 5 }, 0, 5);
+            string input = Console.ReadLine();
+
+            Permute(input.ToCharArray().OrderBy((x) => x).ToArray(), 0, input.Length);
+            Console.WriteLine(counter);
         }
 
-        public static void Permute(int[] permutations, int start, int n)
+        public static void Permute(char[] permutations, int start, int n)
         {
-            int tmp = 0;
-            Print(permutations);
+            char tmp = permutations[0];
+            counter++;
+            Console.WriteLine(permutations);
 
             if (start < n)
             {
@@ -41,11 +47,6 @@ namespace _11.PermutationsWithRepetition
                     permutations[n - 1] = tmp;
                 }
             }
-        }
-
-        private static void Print(int[] ps)
-        {
-            Console.WriteLine(String.Join("", ps));
         }
     }
 }
