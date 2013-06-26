@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tree view - jquery plugin</title>
+</head>
+<body>
+	<ul id="treeView">
+		<li>Item1</li>
+		<li>Item2</li>
+		<li>Item3</li>
+		<li>Item4</li>
+		<li>
+			Item with subitems
+			<ul class='sub'>
+				<li>Subitem1</li>
+				<li>
+					Item with subitems
+					<ul class='sub'>
+						<li>Subitem1</li>
+						<li>Subitem2</li>
+						<li>Subitem3</li>
+					</ul>
+				</li>
+				<li>Subitem3</li>
+			</ul>
+		</li>
+		<li>Item5</li>
+		<li>Item5</li>
+		<li>
+			Item with subitems
+			<ul class="sub">
+				<li>Subitem1</li>
+				<li>Subitem2</li>
+				<li>Subitem3</li>
+			</ul>
+		</li>
+		<li>Item5</li>
+		<li>Item5</li>
+	</ul>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="treeview.js"></script>
+	<script>
+		$("pesho").treeView({
+			conn: "#treeView",
+			sublists: ".sub"
+		});
+	</script>
+</body>
+</html>
