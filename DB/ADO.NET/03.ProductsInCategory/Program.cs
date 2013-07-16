@@ -21,7 +21,7 @@ class Program
             {
                 string currCatName = string.Empty;
                 StringBuilder products = new StringBuilder();
-
+                
                 while (reader.Read())
                 {
                     string catName = (string)reader["CategoryName"];
@@ -29,9 +29,13 @@ class Program
 
                     if (currCatName != catName)
                     {
-                        Console.WriteLine("Category name: {0}", currCatName);
-                        Console.WriteLine("Products: {0}", products);
-                        Console.WriteLine();
+                        if (currCatName != string.Empty)
+                        {
+                            products.Length -= 2; // remove the last colon.
+                            Console.WriteLine("Category name: {0}", currCatName);
+                            Console.WriteLine("Products: {0}", products);
+                            Console.WriteLine();
+                        }
 
                         currCatName = catName;
                         products = new StringBuilder();

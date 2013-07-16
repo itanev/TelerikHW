@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.AddProduct", "04.AddProd
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.GetImagesFromNorthwind", "05.GetImagesFromNorthwind\05.GetImagesFromNorthwind.csproj", "{64BBA806-CA1E-4087-A28F-011C67A13441}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.ReadFromExcel", "06.ReadFromExcel\06.ReadFromExcel.csproj", "{60E39A58-CF39-4FAF-984F-41ABABFA3768}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06 07.ReadFromExcel", "06.ReadFromExcel\06 07.ReadFromExcel.csproj", "{60E39A58-CF39-4FAF-984F-41ABABFA3768}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
