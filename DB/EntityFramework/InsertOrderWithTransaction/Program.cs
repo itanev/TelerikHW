@@ -6,6 +6,7 @@ using System.Transactions;
 using System.Data;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
+using System.Data.Entity.Infrastructure;
 
 namespace InsertOrderWithTransaction
 {
@@ -36,9 +37,10 @@ namespace InsertOrderWithTransaction
 
                     db.Orders.Add(newOrder);
                     db.SaveChanges();
-                }
 
-                transaction.Complete();
+                    transaction.Complete();
+                    ((IObjectContextAdapter)db).ObjectContext.AcceptAllChanges();
+                }
             }
         }
 
