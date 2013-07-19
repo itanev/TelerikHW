@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema.html" elementFormDefault="qualified">
+  <xs:students>
+    <xs:student>
+      <xs:name type="xs:string">Pesho</xs:name>
+      <xs:sex type="xs:string">Male</xs:sex>
+      <xs:birthDate type="xs:date">12/12/1987</xs:birthDate>
+      <xs:phone type="xs:string">0896462391</xs:phone>
+      <xs:email type="xs:string">pesho@gmail.com</xs:email>
+      <xs:course type="xs:string">Third</xs:course>
+      <xs:specialty type="xs:string">Informatics</xs:specialty>
+      <xs:facultyNumber type="xs:string">24634</xs:facultyNumber>
+      <xs:takenExams>
+        <xs:exam>
+          <xs:name type="xs:string">LA</xs:name>
+          <xs:tutor type="xs:string">Kirov</xs:tutor>
+          <xs:score type="xs:decimal">3.24</xs:score>
+        </xs:exam>
+      </xs:takenExams>
+    </xs:student>
+
+    <xs:student>
+      <xs:name type="xs:string">Kiro</xs:name>
+      <xs:sex type="xs:string">Male</xs:sex>
+      <xs:birthDate type="xs:date">12/12/1991</xs:birthDate>
+      <xs:phone type="xs:string">0896462391</xs:phone>
+      <xs:email type="xs:string">kiro@gmail.com</xs:email>
+      <xs:course type="xs:string">Second</xs:course>
+      <xs:specialty type="xs:string">Informatics</xs:specialty>
+      <xs:facultyNumber type="xs:string">35443</xs:facultyNumber>
+      <xs:takenExams>
+        <xs:exam>
+          <xs:name type="xs:string">AG</xs:name>
+          <xs:tutor type="xs:string">Peshev</xs:tutor>
+          <xs:score type="xs:decimal">3.45</xs:score>
+        </xs:exam>
+      </xs:takenExams>
+    </xs:student>
+
+    <xs:student>
+      <xs:name type="xs:string">Ivan</xs:name>
+      <xs:sex type="xs:string">Male</xs:sex>
+      <xs:birthDate type="xs:date">12/12/1993</xs:birthDate>
+      <xs:phone type="xs:string">0896462391</xs:phone>
+      <xs:email type="xs:string">ivan@gmail.com</xs:email>
+      <xs:course type="xs:string">First</xs:course>
+      <xs:specialty type="xs:string">Informatics</xs:specialty>
+      <xs:facultyNumber type="xs:string">44563</xs:facultyNumber>
+      <xs:takenExams>
+        <xs:exam>
+          <xs:name type="xs:string">DIS</xs:name>
+          <xs:tutor type="xs:string">Mihov</xs:tutor>
+          <xs:score type="xs:decimal">3.00</xs:score>
+        </xs:exam>
+      </xs:takenExams>
+    </xs:student>
+
+  </xs:students>
+</xs:schema>
