@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<albums>
+	<album id="1">
+		<name>Sicknes</name>
+		<artist>Disturbed</artist>
+		<year>2001</year>
+		<producer>Disturbed</producer>
+		<price>14.56</price>
+		<songs>
+			<song>
+				<title>Down with the sickness</title>
+				<duration>4.03</duration>
+			</song>
+		</songs>
+	</album>
+	
+	<album>
+		<name>The night</name>
+		<artist>Disturbed</artist>
+		<year>2004</year>
+		<producer>Disturbed</producer>
+		<price>16.56</price>
+		<songs>
+			<song>
+				<title>Legend</title>
+				<duration>4.47</duration>
+			</song>
+		</songs>
+	</album>
+</albums>
