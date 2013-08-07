@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MusicShopModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="MusicShopModelStoreContainer">
+          <EntitySet Name="Album_Artist" EntityType="MusicShopModel.Store.Album_Artist" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Album_Song" EntityType="MusicShopModel.Store.Album_Song" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Albums" EntityType="MusicShopModel.Store.Albums" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Artists" EntityType="MusicShopModel.Store.Artists" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Genre" EntityType="MusicShopModel.Store.Genre" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Songs" EntityType="MusicShopModel.Store.Songs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="MusicShopModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Album_Artist_Albums" Association="MusicShopModel.Store.FK_Album_Artist_Albums">
+            <End Role="Albums" EntitySet="Albums" />
+            <End Role="Album_Artist" EntitySet="Album_Artist" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Album_Artist_Artists" Association="MusicShopModel.Store.FK_Album_Artist_Artists">
+            <End Role="Artists" EntitySet="Artists" />
+            <End Role="Album_Artist" EntitySet="Album_Artist" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Album_Song_Albums" Association="MusicShopModel.Store.FK_Album_Song_Albums">
+            <End Role="Albums" EntitySet="Albums" />
+            <End Role="Album_Song" EntitySet="Album_Song" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Album_Song_Songs" Association="MusicShopModel.Store.FK_Album_Song_Songs">
+            <End Role="Songs" EntitySet="Songs" />
+            <End Role="Album_Song" EntitySet="Album_Song" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Songs_Artists" Association="MusicShopModel.Store.FK_Songs_Artists">
+            <End Role="Artists" EntitySet="Artists" />
+            <End Role="Songs" EntitySet="Songs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Songs_Genre" Association="MusicShopModel.Store.FK_Songs_Genre">
+            <End Role="Genre" EntitySet="Genre" />
+            <End Role="Songs" EntitySet="Songs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Album_Artist">
+          <Key>
+            <PropertyRef Name="albumId" />
+            <PropertyRef Name="artistId" />
+          </Key>
+          <Property Name="albumId" Type="int" Nullable="false" />
+          <Property Name="artistId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Album_Song">
+          <Key>
+            <PropertyRef Name="albumId" />
+            <PropertyRef Name="songId" />
+          </Key>
+          <Property Name="albumId" Type="int" Nullable="false" />
+          <Property Name="songId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Albums">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="varchar" MaxLength="50" />
+          <Property Name="year" Type="int" />
+          <Property Name="producer" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Artists">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+          <Property Name="DateOfBirth" Type="date" />
+        </EntityType>
+        <EntityType Name="Genre">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Songs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="title" Type="varchar" MaxLength="50" />
+          <Property Name="year" Type="int" />
+          <Property Name="genreId" Type="int" />
+          <Property Name="artistId" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Album_Artist_Albums">
+          <End Role="Albums" Type="MusicShopModel.Store.Albums" Multiplicity="1" />
+          <End Role="Album_Artist" Type="MusicShopModel.Store.Album_Artist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Albums">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Album_Artist">
+              <PropertyRef Name="albumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Album_Artist_Artists">
+          <End Role="Artists" Type="MusicShopModel.Store.Artists" Multiplicity="1" />
+          <End Role="Album_Artist" Type="MusicShopModel.Store.Album_Artist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artists">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Album_Artist">
+              <PropertyRef Name="artistId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Album_Song_Albums">
+          <End Role="Albums" Type="MusicShopModel.Store.Albums" Multiplicity="1" />
+          <End Role="Album_Song" Type="MusicShopModel.Store.Album_Song" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Albums">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Album_Song">
+              <PropertyRef Name="albumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Album_Song_Songs">
+          <End Role="Songs" Type="MusicShopModel.Store.Songs" Multiplicity="1" />
+          <End Role="Album_Song" Type="MusicShopModel.Store.Album_Song" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Songs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Album_Song">
+              <PropertyRef Name="songId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Songs_Artists">
+          <End Role="Artists" Type="MusicShopModel.Store.Artists" Multiplicity="0..1" />
+          <End Role="Songs" Type="MusicShopModel.Store.Songs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artists">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Songs">
+              <PropertyRef Name="artistId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Songs_Genre">
+          <End Role="Genre" Type="MusicShopModel.Store.Genre" Multiplicity="0..1" />
+          <End Role="Songs" Type="MusicShopModel.Store.Songs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genre">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Songs">
+              <PropertyRef Name="genreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MusicShopModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MusicShopEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Albums" EntityType="MusicShopModel.Album" />
+          <EntitySet Name="Artists" EntityType="MusicShopModel.Artist" />
+          <EntitySet Name="Genres" EntityType="MusicShopModel.Genre" />
+          <EntitySet Name="Songs" EntityType="MusicShopModel.Song" />
+          <EntitySet Name="sysdiagrams" EntityType="MusicShopModel.sysdiagram" />
+          <AssociationSet Name="FK_Songs_Artists" Association="MusicShopModel.FK_Songs_Artists">
+            <End Role="Artists" EntitySet="Artists" />
+            <End Role="Songs" EntitySet="Songs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Songs_Genre" Association="MusicShopModel.FK_Songs_Genre">
+            <End Role="Genre" EntitySet="Genres" />
+            <End Role="Songs" EntitySet="Songs" />
+          </AssociationSet>
+          <AssociationSet Name="Album_Artist" Association="MusicShopModel.Album_Artist">
+            <End Role="Albums" EntitySet="Albums" />
+            <End Role="Artists" EntitySet="Artists" />
+          </AssociationSet>
+          <AssociationSet Name="Album_Song" Association="MusicShopModel.Album_Song">
+            <End Role="Albums" EntitySet="Albums" />
+            <End Role="Songs" EntitySet="Songs" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(MusicShopModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(MusicShopModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <EntityType Name="Album">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="year" Type="Int32" />
+          <Property Name="producer" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Artists" Relationship="MusicShopModel.Album_Artist" FromRole="Albums" ToRole="Artists" />
+          <NavigationProperty Name="Songs" Relationship="MusicShopModel.Album_Song" FromRole="Albums" ToRole="Songs" />
+        </EntityType>
+        <EntityType Name="Artist">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Songs" Relationship="MusicShopModel.FK_Songs_Artists" FromRole="Artists" ToRole="Songs" />
+          <NavigationProperty Name="Albums" Relationship="MusicShopModel.Album_Artist" FromRole="Artists" ToRole="Albums" />
+        </EntityType>
+        <EntityType Name="Genre">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Songs" Relationship="MusicShopModel.FK_Songs_Genre" FromRole="Genre" ToRole="Songs" />
+        </EntityType>
+        <EntityType Name="Song">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="year" Type="Int32" />
+          <Property Name="genreId" Type="Int32" />
+          <Property Name="artistId" Type="Int32" />
+          <NavigationProperty Name="Artist" Relationship="MusicShopModel.FK_Songs_Artists" FromRole="Songs" ToRole="Artists" />
+          <NavigationProperty Name="Genre" Relationship="MusicShopModel.FK_Songs_Genre" FromRole="Songs" ToRole="Genre" />
+          <NavigationProperty Name="Albums" Relationship="MusicShopModel.Album_Song" FromRole="Songs" ToRole="Albums" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Songs_Artists">
+          <End Role="Artists" Type="MusicShopModel.Artist" Multiplicity="0..1" />
+          <End Role="Songs" Type="MusicShopModel.Song" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artists">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Songs">
+              <PropertyRef Name="artistId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Songs_Genre">
+          <End Role="Genre" Type="MusicShopModel.Genre" Multiplicity="0..1" />
+          <End Role="Songs" Type="MusicShopModel.Song" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genre">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Songs">
+              <PropertyRef Name="genreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Album_Artist">
+          <End Role="Albums" Type="MusicShopModel.Album" Multiplicity="*" />
+          <End Role="Artists" Type="MusicShopModel.Artist" Multiplicity="*" />
+        </Association>
+        <Association Name="Album_Song">
+          <End Role="Albums" Type="MusicShopModel.Album" Multiplicity="*" />
+          <End Role="Songs" Type="MusicShopModel.Song" Multiplicity="*" />
+        </Association>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MusicShopModelStoreContainer" CdmEntityContainer="MusicShopEntities">
+          <EntitySetMapping Name="Albums">
+            <EntityTypeMapping TypeName="MusicShopModel.Album">
+              <MappingFragment StoreEntitySet="Albums">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="producer" ColumnName="producer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Artists">
+            <EntityTypeMapping TypeName="MusicShopModel.Artist">
+              <MappingFragment StoreEntitySet="Artists">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Genres">
+            <EntityTypeMapping TypeName="MusicShopModel.Genre">
+              <MappingFragment StoreEntitySet="Genre">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Songs">
+            <EntityTypeMapping TypeName="MusicShopModel.Song">
+              <MappingFragment StoreEntitySet="Songs">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="genreId" ColumnName="genreId" />
+                <ScalarProperty Name="artistId" ColumnName="artistId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="MusicShopModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Album_Artist" TypeName="MusicShopModel.Album_Artist" StoreEntitySet="Album_Artist">
+            <EndProperty Name="Albums">
+              <ScalarProperty Name="id" ColumnName="albumId" />
+            </EndProperty>
+            <EndProperty Name="Artists">
+              <ScalarProperty Name="id" ColumnName="artistId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Album_Song" TypeName="MusicShopModel.Album_Song" StoreEntitySet="Album_Song">
+            <EndProperty Name="Albums">
+              <ScalarProperty Name="id" ColumnName="albumId" />
+            </EndProperty>
+            <EndProperty Name="Songs">
+              <ScalarProperty Name="id" ColumnName="songId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="MusicShopModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="MusicShopModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="MusicShopModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="MusicShopModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MusicShopModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="MusicShopModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MusicShopModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="MusicShopModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="MusicShopModel.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
