@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<script src="../scripts/underscore.js"></script>
+</head>
+<body>
+	
+	<script>
+		var authors = [ {Name: "bai ivan", books: 10},
+						{Name: "kiro", books: 20},
+						{Name: "pesho", books: 13},
+						{Name: "gosho", books: 21},
+						{Name: "stamat", books: 8}];
+						
+		var author = _.max(authors, function(a) { return a.books; } );
+						
+		console.log(author.Name);
+	</script>
+</body>
+</html>

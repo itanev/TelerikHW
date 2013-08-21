@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<script src="../scripts/underscore.js"></script>
+</head>
+<body>
+	
+	<script>
+		var students = [{firstName: "Aleks", lastName: "Aleks", age: 15},
+						{firstName: "Kiro", lastName: "Ivanov", age: 20},
+						{firstName: "Georgi", lastName: "Georgiev", age: 24},
+						{firstName: "Ivan", lastName: "Kirov", age: 32}];
+						
+		var resultStudents = _.groupBy(students, 
+										function(student){
+											return student.age >= 18 && student.age <= 24;
+										});
+										
+		_.each(resultStudents.true, 
+			function(item){
+				console.log(item.firstName + ' ' + item.lastName);
+			});
+	</script>
+</body>
+</html>

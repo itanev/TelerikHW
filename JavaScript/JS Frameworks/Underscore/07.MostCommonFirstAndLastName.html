@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<script src="../scripts/underscore.js"></script>
+</head>
+<body>
+	
+	<script>
+		var people =   [{firstName: "Aleks", lastName: "Aleks"},
+						{firstName: "Kiro", lastName: "Ivanov"},
+						{firstName: "Georgi", lastName: "Georgiev"},
+						{firstName: "Ivan", lastName: "Kirov"},
+						{firstName: "Aleks", lastName: "Aleks"},
+						{firstName: "Aleks", lastName: "Aleks"}];
+		
+		var res = _.groupBy(people, function(p) {
+							  return p.firstName + p.lastName;
+						  });
+		
+		var max = 0;
+		
+		_.each(res, function(item) {
+						if(item.length > max) {
+							max = item;
+						}
+					});
+		
+		console.log(max[0].firstName + ' ' + max[0].lastName);
+	</script>           
+</body>                 
+</html>                 

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<script src="../scripts/underscore.js"></script>
+</head>
+<body>
+	
+	<script>
+		var animals = [ {species: "memal", kind: "human", legs: 2},
+						{species: "fish", kind: "shark", legs: 0},
+						{species: "insect", kind: "ant", legs: 6},
+						{species: "reptile", kind: "lizard", legs: 4},
+						{species: "insect", kind: "spider", legs: 8}];
+						
+		var sum = 0;
+		
+		_.each(animals, function(animal) {
+							sum += animal.legs;
+						});
+						
+		console.log(sum);
+	</script>
+</body>
+</html>

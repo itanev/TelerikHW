@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<script src="../scripts/underscore.js"></script>
+</head>
+<body>
+	
+	<script>
+		var students = [{firstName: "Aleks", lastName: "Aleks"},
+						{firstName: "Kiro", lastName: "Ivanov"},
+						{firstName: "Georgi", lastName: "Georgiev"},
+						{firstName: "Ivan", lastName: "Kirov"}];
+		
+		var studentsWithGratterFirstName = _.filter(students, 
+												function(student){
+													return student.firstName > student.lastName;
+												});
+					
+		var sorted = _.sortBy(studentsWithGratterFirstName, 
+						function(student) {
+							return student.firstName + student.lastName;
+						});
+		
+		_.each(sorted, function(item){console.log(item);});
+	</script>
+</body>
+</html>
+
