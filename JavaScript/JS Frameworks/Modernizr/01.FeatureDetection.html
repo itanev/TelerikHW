@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>Modernizr - Detect HTML5 Features from JS</title>
+	<script src="../scripts/modernizr-2.6.2-full.js"></script>		  
+	<script src="../scripts/ua-parser.js"></script>		  
+</head>
+
+<body>
+	<div id="result"></div>
+	<script>
+		var parser = new UAParser();
+		var result = parser.getResult();
+		var browserName = result.browser.name;
+		var browserVersion = result.browser.version;
+		var os = result.os.name + ' ' + result.os.version;
+		var device = result.device;
+		
+		var display = document.getElementById('result');
+		
+		display.innerHTML += "<p>Browser name: " + browserName + '</p>';
+		display.innerHTML += "<p>Browser version: " + browserVersion + '</p>';
+		display.innerHTML += "<p>OS: " + os + '</p>';
+		display.innerHTML += "<p>Device vendor: " + device.vendor + '</p>';
+		display.innerHTML += "<p>Device model: " + device.model + '</p>';
+		display.innerHTML += "<p>Device type: " + device.type + '</p>';
+		
+		Support(Modernizr.canvas, "canvas");
+		Support(Modernizr.canvastext, "canvas text");
+		Support(Modernizr.flexbox, "flexbox");
+		Support(Modernizr.flexboxlegacy, "flexboxlegacy");
+		Support(Modernizr.flexboxlegacy, "flexboxlegacy");
+		Support(Modernizr.flexboxlegacy, "webgl");
+		//etc...
+		
+		function Support(element, name) {
+			if (element) {
+			  display.innerHTML += '<p>HTML5 ' + name + ' is supported</p>';
+			} else {
+			  display.innerHTML += '<p>HTML5 ' + name + ' is not supported</p>';
+			}
+		}
+	</script>
+</body>
+
+</html>
