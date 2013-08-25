@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<script src="../../scripts/require.js" data-main="app-config"></script>
+</head>
+<body>
+	<!-- Not stylish but its working.
+		 The idea is to hide the list every time a new item is being selected,
+		 and to show it every time you click the selected item. -->
+		 
+	<script type="x-mustache-template" id="sample-template">	
+		<div class="person-item" id="person-item-{{id}}">
+		  <strong class="person-name">{{name}}</strong><p class="person-age">{{age}}</p>
+		  <img src="{{avatarUrl}}" width="100px" />
+		</div>
+	</script>
+	
+	<div id="content">
+	</div>
+</body>
+</html>

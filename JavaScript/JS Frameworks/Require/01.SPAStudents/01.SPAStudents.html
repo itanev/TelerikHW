@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<script src="../scripts/require.js" data-main="app-config"></script>
+</head>
+<body>
+	<script type="x-mustache-template" id="students-template">	
+		<li id='{{Id}}' class='student'>
+			<strong>{{Name}}</strong>, Grade - {{Grade}}		
+		</li>
+	</script>
+	
+	<script type="x-mustache-template" id="marks-template">	
+		<li>
+			<strong>{{Subject}}</strong>, Score - {{Score}}		
+		</li>
+	</script>
+	
+	<div id="content">
+	</div>
+</body>
+</html>

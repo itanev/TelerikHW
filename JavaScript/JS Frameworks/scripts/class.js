@@ -1,66 +1,69 @@
-var Class = (function() {
-  function subclass() {}
+/// <reference path="require.js" />
 
-  function createClass(properties) {
-    function f() {
-      this.init.apply(this, arguments);
-    }
+define(function(){
+	var Class = (function () {
+		function subclass() { }
 
-    var prototype = {};
-    for (var prop in properties) {
-      prototype[prop] = properties[prop];
-    }
-    if (!prototype.init) {
-      prototype.init = function() {};
-    }
+		function createClass(properties) {
+			function f() {
+				this.init.apply(this, arguments);
+			}
 
-    f.prototype = prototype;
-    f.extend = extendClass;
+			var prototype = {};
+			for (var prop in properties) {
+				prototype[prop] = properties[prop];
+			}
+			if (!prototype.init) {
+				prototype.init = function () { };
+			}
 
-    return f;
-  }
+			f.prototype = prototype;
+			f.extend = extendClass;
 
-  var initializing = false;
+			return f;
+		}
 
-  function extendClass(properties) {
-    var _super = this.prototype;
+		var initializing = false;
 
-    initializing = true;
-    var prototype = new this();
-    initializing = false;
+		function extendClass(properties) {
+			var _super = this.prototype;
 
-    for (var name in properties) {
-      var value = properties[name];
-      if (_super[name] && typeof value === "function" && typeof _super[name] === "function" && value.toString().indexOf("this._super(") >= 0) {
-        value = (function(name, fn) {
-          return function() {
-            var tmp = this._super;
-            this._super = _super[name];
-            var ret = fn.apply(this, arguments);
-            this._super = tmp;
-            return ret;
-          };
-        }(name, value));
-      }
-      prototype[name] = value;
-    }
+			initializing = true;
+			var prototype = new this();
+			initializing = false;
 
-    function f() {
-      if (!initializing && this.init) {
-        this.init.apply(this, arguments);
-      }
-    }
+			for (var name in properties) {
+				var value = properties[name];
+				if (_super[name] && typeof value === "function" && typeof _super[name] === "function" && value.toString().indexOf("this._super(") >= 0) {
+					value = (function (name, fn) {
+						return function () {
+							var tmp = this._super;
+							this._super = _super[name];
+							var ret = fn.apply(this, arguments);
+							this._super = tmp;
+							return ret;
+						};
+					}(name, value));
+				}
+				prototype[name] = value;
+			}
 
-    f.prototype = prototype;
+			function f() {
+				if (!initializing && this.init) {
+					this.init.apply(this, arguments);
+				}
+			}
 
-    f.prototype.constructor = f;
-    f.extend = extendClass;
-    return f;
-  }
+			f.prototype = prototype;
 
-  return {
-    create: createClass
-  };
-}());
+			f.prototype.constructor = f;
+			f.extend = extendClass;
+			return f;
+		}
 
-// module.exports = Class;
+		return {
+			create: createClass
+		};
+	}());
+	return Class;
+});
