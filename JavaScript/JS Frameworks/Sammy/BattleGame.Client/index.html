@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/require.js" data-main="app"></script>
+</head>
+<body>
+    <script type="x-mustache-template" id="home-template">
+        <button id='register'>Register</button>
+        <button id='login'>Login</button>
+    </script>
+
+    <script type="x-mustache-template" id="register-template">
+		Username: <input type="text" id='username'/>
+        Nickname: <input type="text" id='nickname'/>
+		Password: <input type="text" id='password'/>
+        <button id='register-user'>Register</button>
+    </script>
+
+    <script type="x-mustache-template" id="login-template">
+		Username: <input type="text" id='username'/>
+		Password: <input type="text" id='password'/>
+        <button id='login-user'>Login</button>
+    </script>
+
+    <script type="x-mustache-template" id="welcome-template">
+		Welcome {{nickname}}
+        <button id='active'>Active games</button>
+        <button id='my-active'>My active games</button>
+    </script>
+
+    <script type="x-mustache-template" id="active-template">
+         {{title}}
+    </script>
+
+    <div id="content"></div>
+</body>
+</html>
