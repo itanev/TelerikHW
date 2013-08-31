@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/require.js" data-main="app"></script>
+</head>
+<body>
+    <script type="x-mustache-template" id="home-template">
+        <button id='register'>Register</button>
+        <button id='login'>Login</button>
+    </script>
+
+    <script type="x-mustache-template" id="register-template">
+		Username: <input type="text" id='username'/>
+        Nickname: <input type="text" id='nickname'/>
+		Password: <input type="text" id='password'/>
+        <button id='register-user'>Register</button>
+    </script>
+
+    <script type="x-mustache-template" id="login-template">
+		Username: <input type="text" id='username'/>
+		Password: <input type="text" id='password'/>
+        <button id='login-user'>Login</button>
+    </script>
+
+    <script type="x-mustache-template" id="welcome-template">
+		Welcome {{Nickname}}    
+        <button id='logout-user'>logout</button>
+        <button id='all-posts'>All Posts</button>
+    </script>
+
+    <script type="x-mustache-template" id="posts-template">
+		<h2>{{Title}}</h2>    
+        <span>{{Date}}</span>
+        <span>Tags: {{#Tags}}*{{Name}}{{/Tags}}</span>
+        <p>{{Text}}</p>
+    </script>
+
+     <script type="x-mustache-template" id="comment-template">
+		 <h2>Comment</h2>
+         Content <textarea id='content' />
+
+         <button id="submit-comment">Submit comment</button>
+    </script>
+
+    <div id="content"></div>
+</body>
+</html>
