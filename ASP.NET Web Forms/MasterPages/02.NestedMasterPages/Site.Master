@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" 
+    AutoEventWireup="true" 
+    CodeBehind="Site.master.cs" 
+    Inherits="_02.NestedMasterPages.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Company Name</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <h1>Company Name</h1>
+            <asp:ContentPlaceHolder ID="MenuPlaceHolder" runat="server" />
+        </header>
+        <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+        </asp:ContentPlaceHolder>
+        <footer>
+            (c) Company Name all rights reserved.
+        </footer>
+    </form>
+</body>
+</html>

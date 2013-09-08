@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" 
+    AutoEventWireup="true"
+    CodeBehind="Site.master.cs"
+    Inherits="_01.UserProfile.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="mainForm" runat="server">
+        <header>
+            <h1>Header</h1>
+        </header>
+        <aside>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="~/" runat="server">Home</a>
+                    </li>
+                    <li>
+                        <a href="~/PersonalInfo.aspx" runat="server">Personal Info</a>
+                    </li>
+                    <li>
+                        <a href="~/Friends.aspx" runat="server">Friends</a>
+                    </li>
+                    <li>
+                        <a href="~/AditionalInfo.aspx" runat="server">Aditional Info</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <div>
+            <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer>
+             (c) 2011 by Yoda Corp.
+        </footer>
+    </form>
+</body>
+</html>

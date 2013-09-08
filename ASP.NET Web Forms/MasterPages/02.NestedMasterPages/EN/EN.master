@@ -1,0 +1,26 @@
+﻿<%@ Master Language="C#"
+    MasterPageFile="~/Site.Master" 
+    AutoEventWireup="true"
+    CodeBehind="EN.master.cs" 
+    Inherits="_02.NestedMasterPages.EN.EN" %>
+
+<asp:Content ID="ENMenu" ContentPlaceHolderID="MenuPlaceHolder" runat="server">
+    <a href="~/BG/Home.aspx" runat="server">BG</a>
+    <nav>
+        <ul>
+            <li>
+                <a href="~/EN/Home.aspx" runat="server">Home</a>
+            </li>
+            <li>
+                <a href="~/EN/About.aspx" runat="server">About</a>
+            </li>
+            <li>
+                <a href="~/EN/Contacts.aspx" runat="server">Contacts</a>
+            </li>
+        </ul>
+    </nav>
+</asp:Content>
+
+<asp:Content runat="server" ContentPlaceHolderID="MainContentPlaceHolder">
+    <asp:ContentPlaceHolder ID="ENMainContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
