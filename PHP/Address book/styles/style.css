@@ -1,0 +1,27 @@
+table {
+	margin: 10px;
+}
+
+table, table tr, table td, table th {
+	border: 1px solid black;
+}
+
+table th{
+	background-color: #ccc;
+}
+
+table th, table td {
+	padding: 5px;
+}
+
+#expensesSelectField {
+	display: inline;
+}
+
+.error {
+	color: red;
+}
+
+.success {
+	color: green;
+}
