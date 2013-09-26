@@ -1,0 +1,2 @@
+Thread was beeing aborted meens success.
+You must create the database from the script in the db folder.
