@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Calculator Page";
+}
+<h1>Bit Calculator</h1>
+
+@using (Html.BeginForm("Calculate", "Calculator", FormMethod.Post))
+{
+    <div>
+        @Html.Label("Quantity", "Quantity")
+        @Html.TextBox("Quantity")
+    </div>
+
+    <div>
+        @Html.Label("Types", "Type")
+        <select name="Type">
+            @{
+                foreach (var item in ViewBag.typesSizes.Keys)
+                {
+                    <option>@item</option>
+                }
+            }
+        </select>
+    </div>
+    
+    <div>
+        @Html.Label("Kilo", "Kilo")
+        <select name="Kilo">
+            <option>1024</option>
+            <option>1000</option>
+        </select>
+    </div>
+
+    <input type="submit" value="GO" class="btn" />
+}
+
+<table class="table table-striped">
+    @{
+        foreach (var item in ViewBag.typesSizes)
+        {
+            <tr>
+                <td>@item.Key</td>
+                <td>@item.Value</td>
+            </tr>
+        }
+    }
+</table>
