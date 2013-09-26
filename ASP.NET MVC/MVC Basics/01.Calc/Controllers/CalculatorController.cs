@@ -53,7 +53,7 @@ namespace _01.Calc.Controllers
             this.bitTypesSize[this.types[2]] = bits / kilo;
 
             FillBits(kilo);
-                
+
             ViewBag.typesSizes = this.bitTypesSize;
 
             return View("Index");
@@ -82,16 +82,14 @@ namespace _01.Calc.Controllers
             {
                 int pos = this.types.IndexOf(enteredType) + 1;
 
-                for (int i = pos; i > 0; i--)
+                if (pos % 2 == 0)
                 {
-                    if (i % 2 == 0)
-                    {
-                        bits *= 8;
-                    }
-                    else
-                    {
-                        bits *= kilo;
-                    }
+                    bits *= 8;
+                }
+
+                for (int i = pos-3; i > 0; i--)
+                {
+                    bits *= kilo;
                 }
             }
 

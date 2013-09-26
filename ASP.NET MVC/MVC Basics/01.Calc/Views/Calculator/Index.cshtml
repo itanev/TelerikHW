@@ -16,7 +16,7 @@
             @{
                 foreach (var item in ViewBag.typesSizes.Keys)
                 {
-                    <option>@item</option>
+                    <option>@String.Format("{0}", item)</option>
                 }
             }
         </select>
