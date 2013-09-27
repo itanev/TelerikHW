@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Blog - All Posts";
+}
+
+<hgroup>
+    <h2>@ViewBag.Title.</h2>
+</hgroup>
+
+@using (Html.BeginForm("", "AdminBlog"))
+{
+    <ul>
+        @foreach (var post in ViewBag.AllPosts)
+        {
+            @Html.Partial("_PostPartialAdmin", (_02.InformationApp.Models.Post)post)
+        }
+    </ul>
+}

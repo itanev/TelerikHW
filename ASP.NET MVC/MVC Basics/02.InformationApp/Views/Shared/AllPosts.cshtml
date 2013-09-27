@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Blog - All Posts";
+}
+
+<hgroup>
+    <h2>@ViewBag.Title.</h2>
+</hgroup>
+<div>
+    <ul>
+        @foreach (var post in ViewBag.AllPosts)
+        {
+            @Html.Partial("_PostPartial", (_02.InformationApp.Models.Post)post)
+        }
+    </ul>
+</div>

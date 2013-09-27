@@ -41,7 +41,7 @@ namespace _01.Calc.Controllers
                 kilo = parameters.Kilo;
             }
 
-            if (this.bitTypesSize.ContainsKey(enteredType))
+            if (this.bitTypesSize.ContainsKey(enteredType)) 
             {
                 currQuantity = parameters.Quantity;
             }

@@ -1,0 +1,17 @@
+@model _02.InformationApp.Models.Post
+<li>
+    <article>
+        <header>
+            <h3>@Model.Title</h3>
+        </header>
+        <section>
+            <p>
+                @Model.Content
+            </p>
+        </section>
+        <footer>
+            <input type="submit" value="Update" name="action:Update" />
+            <input type="submit" value="Delete" name="action:Delete" />
+        </footer>
+    </article>
+</li>
