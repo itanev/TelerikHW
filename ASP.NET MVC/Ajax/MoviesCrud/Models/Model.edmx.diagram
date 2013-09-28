@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0ea9ed9037934ca4ae3b433f108349a8" Name="Diagram1">
+        <EntityTypeShape EntityType="MoviesDatabaseModel.Movies" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MoviesDatabaseModel.People" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MoviesDatabaseModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="MoviesDatabaseModel.FK_Movies_People" ManuallyRouted="false" />
+        <AssociationConnector Association="MoviesDatabaseModel.FK_Movies_People1" ManuallyRouted="false" />
+        <AssociationConnector Association="MoviesDatabaseModel.FK_Movies_People2" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MoviesDatabaseModel.Studio" Width="1.5" PointX="11.692303117221362" PointY="23.173761408391297" />
+        <AssociationConnector Association="MoviesDatabaseModel.FK_People_Studio" />
+        <EntityTypeShape EntityType="MoviesDatabaseModel.Kinds" Width="1.5" PointX="8.0185403525915646" PointY="26.376627561811649" />
+        <AssociationConnector Association="MoviesDatabaseModel.FK_People_Kinds" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
