@@ -6,7 +6,7 @@
 
 <script type="text/javascript">
     function generateFromPerson(person, prefix) {
-        return  "<p>" + prefix + ": " + person.FirstName + " " + person.LastName + ", Age: " + person.Age + "</p>" +
+        return "<p>" + prefix + ": " + person.FirstName + " " + person.LastName + ", Age: " + person.Age + "</p>" +
                 "<p>" + prefix + " Studio: " + person.Studio.Name + "</p>" +
                 "<p>Address: " + person.Studio.Address + "</p>";
     }
@@ -17,12 +17,9 @@
             var li = "<li>";
             li += "<h4>Title: " + this.Title + "</h4>";
             li += "<p>Year: " + this.Year + "</p>";
-            li += generateFromPerson(this.Director, "Directo ");
-            li += generateFromPerson(this.LeadingMale, "Leading Male Actor");
-            li += generateFromPerson(this.LeadingFemale, "Leading Female Actor");
-            li += "<a href='Movies/Edit/" + this.Id + "'>Edit</a> ";
-            li += "<a href='Movies/Delete/" + this.Id + "'>Delete</a> ";
-            li += "<a href='Movies/Details/" + this.Id + "'>Details</a>";
+            li += "<a href='Movies/Edit/" + this.Id + "' data-ajax='true' data-ajax-method='Get' data-ajax-mode='replace' data-ajax-update='#edit-movie' data-ajax-success='showEdit'>Edit</a> ";
+            li += "<a href='Movies/Delete/" + this.Id + "' data-ajax='true' data-ajax-method='Get' data-ajax-mode='replace' data-ajax-update='#delete-movie' data-ajax-success='showDelete'>Delete</a> ";
+            li += "<a href='Movies/Details/" + this.Id + "' data-ajax='true' data-ajax-method='Get' data-ajax-mode='replace' data-ajax-update='#details-movie' data-ajax-success='showDetails'>Details</a>";
             li += "</li>";
 
             html += li;
@@ -30,15 +27,48 @@
 
         $("#content").append(html);
     });
+
+    function showEdit() {
+        $("#edit-movie").show();
+        $("#delete-movie").hide();
+        $("#insert-movie").hide();
+        $("#details-movie").hide();
+    }
+
+    function showDelete() {
+        $("#delete-movie").show();
+        $("#edit-movie").hide();
+        $("#insert-movie").hide();
+        $("#details-movie").hide();
+    }
+
+    function showDetails() {
+        $("#details-movie").show();
+        $("#edit-movie").hide();
+        $("#insert-movie").hide();
+        $("#delete-movie").hide();
+    }
+
+    function showInsert() {
+        $("#insert-movie").show();
+        $("#edit-movie").hide();
+        $("#details-movie").hide();
+        $("#delete-movie").hide();
+    }
 </script>
 
 <ul id="content"></ul>
-
+<div id="edit-movie"></div>
+<div id="delete-movie"></div>
+<div id="details-movie"></div>
 <div id="insert-movie"></div>
 
-@using (Html.BeginForm("Create", "Movies", FormMethod.Get))
+@Ajax.ActionLink("Create Movie", "Create", "Movies", new AjaxOptions()
 {
-    <input type="submit" value="Create Movie" />
-}
+    UpdateTargetId = "insert-movie",
+    HttpMethod = "Get",
+    InsertionMode = InsertionMode.Replace,
+    OnSuccess = "showInsert"
+})
 
 

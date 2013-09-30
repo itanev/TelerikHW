@@ -49,14 +49,15 @@ namespace MoviesCrud.Controllers
 
             var movieModel = this.GenerateMovieModel(movie);
 
-            return View(movieModel);
+            return PartialView("_Details", movieModel);
         }
         
         //
         // GET: /Movies/Create
+        [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            return PartialView("_Create");
         }
 
         //
@@ -108,7 +109,7 @@ namespace MoviesCrud.Controllers
             }
 
             var movieToEditModel = this.GenerateMovieModel(movie);
-            return View(movieToEditModel);
+            return View("_Edit", movieToEditModel);
         }
 
         //
@@ -155,7 +156,7 @@ namespace MoviesCrud.Controllers
             var movieToRemove = context.Movies.Find(id);
             var movieViewModel = GenerateMovieModel(movieToRemove);
 
-            return View(movieViewModel);
+            return PartialView("_Delete", movieViewModel);
         }
 
         //

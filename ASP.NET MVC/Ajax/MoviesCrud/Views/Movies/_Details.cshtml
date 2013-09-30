@@ -1,0 +1,152 @@
+@model MoviesCrud.ViewModels.Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Movie</legend>
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director.Studio.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director.Studio.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director.Studio.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director.Studio.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadingMale.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadingMale.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadingMale.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadingMale.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadingMale.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadingMale.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadingMale.Studio.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadingMale.Studio.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadingMale.Studio.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadingMale.Studio.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadingFemale.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadingFemale.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadingFemale.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadingFemale.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadingFemale.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadingFemale.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadingFemale.Studio.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadingFemale.Studio.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadingFemale.Studio.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadingFemale.Studio.Address)
+        </dd>
+    </dl>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

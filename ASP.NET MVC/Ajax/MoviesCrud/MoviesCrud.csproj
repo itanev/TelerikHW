@@ -320,11 +320,11 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Movies\Create.cshtml" />
+    <Content Include="Views\Movies\_Create.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
-    <Content Include="Views\Movies\Details.cshtml" />
-    <Content Include="Views\Movies\Edit.cshtml" />
-    <Content Include="Views\Movies\Delete.cshtml" />
+    <Content Include="Views\Movies\_Details.cshtml" />
+    <Content Include="Views\Movies\_Edit.cshtml" />
+    <Content Include="Views\Movies\_Delete.cshtml" />
     <Content Include="Views\Shared\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
