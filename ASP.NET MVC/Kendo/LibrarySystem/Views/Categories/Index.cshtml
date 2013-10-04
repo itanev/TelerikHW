@@ -1,0 +1,30 @@
+﻿<h2>Edit Categories</h2>
+
+@(Html.Kendo().Grid<LibrarySystem.Models.CategoryViewModel>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+          columns.Bound(cat => cat.Name);
+          columns.Command(commands =>
+          {
+              commands.Edit().UpdateText("Save");
+              commands.Destroy();
+          }).Title("Commands").Width(200);
+      })
+      .ToolBar(toolbar => toolbar.Create())
+      .Editable(editable => editable.Mode(GridEditMode.PopUp))
+      .DataSource(dataSource =>
+          dataSource.Ajax()
+            .Model(model =>
+            {
+                model.Id(cat => cat.Id);
+            })
+            .Create(create => create.Action("CategoriesCreate", "Categories"))
+            .Read(read => read.Action("CategoriesRead", "Categories"))
+            .Update(update => update.Action("CategoriesUpdate", "Categories"))
+            .Destroy(destroy => destroy.Action("CategoriesDestroy", "Categories"))
+            .PageSize(5)
+      )
+      .Pageable()
+      .Sortable()
+)

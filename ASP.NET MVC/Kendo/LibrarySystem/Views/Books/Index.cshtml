@@ -1,0 +1,36 @@
+﻿@model IEnumerable<LibrarySystem.Models.Category>
+
+<h2>Edit Books</h2>
+
+@(Html.Kendo().Grid<LibrarySystem.Models.BookViewModel>()
+      .Name("booksGrid")
+      .Columns(columns =>
+      {
+          columns.Bound(book => book.Title);
+          columns.Bound(book => book.Author);
+          columns.Bound(book => book.Description);
+          columns.Bound(book => book.CategoryName);
+          columns.Bound(book => book.Isbn);
+          columns.Command(commands =>
+          {
+              commands.Edit().UpdateText("Save");
+              commands.Destroy();
+          }).Title("Commands").Width(200);
+      })
+      .ToolBar(toolbar => toolbar.Create())
+      .Editable(editable => editable.Mode(GridEditMode.PopUp).TemplateName("_BookEditing"))
+      .DataSource(dataSource =>
+          dataSource.Ajax()
+            .Model(model =>
+            {
+                model.Id(book => book.Id);
+            })
+            .Create(create => create.Action("Create", "Books"))
+            .Read(read => read.Action("Read", "Books"))
+            .Update(update => update.Action("Update", "Books"))
+            .Destroy(destroy => destroy.Action("Destroy", "Books"))
+            .PageSize(5)
+      )
+      .Pageable()
+      .Sortable()
+)
