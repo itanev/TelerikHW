@@ -6,6 +6,8 @@
 	$pathToViews = "/Telerik HW/BooksCatalog/PHP/Includes/Views/";
 ?>
 	<form method="Post" action="<?php echo $pathToViews . "Author.php"; ?>" id="content">
+		<a href="<?php echo $pathToViews . "Register.php"; ?>" title="Register">Регистрация</a>
+		<a href="<?php echo $pathToViews . "Login.php"; ?>" title="Login">Вход</a>
 		<a href="<?php echo $pathToViews . "AddBook.php"; ?>" title="Add New Book">Нова книга</a>
 		<a href="<?php echo $pathToViews . "AddAuthor.php"; ?>" title="Add New Author">Нов Автор</a>
 		<?php echo GenerateTable($booksCatalog); ?>

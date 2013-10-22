@@ -1,4 +1,26 @@
 <?php
+	function ShowComments($comments) {
+		foreach($comments as $comment) {
+			$html = "<div>";
+			$html .= "Author: " . $comment['username'] . "<br />";
+			$html .= "Published on: " . $comment['date'] . "<br />";
+			$html .= "<p>" . $comment['content'] . "</p><br />";
+			$html .= "</div>";
+			
+			echo $html;
+		}
+	}
+
+	function GenerateCommentsForm($actionLink) {
+		$html = "<form method='POST' action='{$actionLink}'>";
+		$html .= "Comment: <textarea name='content'></textarea>";
+		$html .= "<input type='hidden' value='{$_SESSION['user']}' name='username' />";
+		$html .= "<input type='submit' value='Comment' />";
+		$html .= "</form>";
+		
+		return $html;
+	}
+	
 	function GenerateAuthorsList($booksCatalog, $bookId) {
 		$bookAuthors = $booksCatalog->GetBookAuthors($bookId);
 
@@ -15,7 +37,7 @@
 		$table = "<table border='1'>";
 		foreach($allBooks as $book) {
 			$table .= "<tr>";
-			$table .= "<td>" . $book->title . "</td>";
+			$table .= "<td><button type='submit' name='book' value='{$book->id}'>{$book->title}</button></td>";
 			$table .= "<td>" . GenerateAuthorsList($booksCatalog, $book->id) . "</td>";
 			$table .= "<tr>";
 		}

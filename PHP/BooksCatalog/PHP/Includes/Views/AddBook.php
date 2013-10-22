@@ -32,4 +32,6 @@
 			echo "Book added.";
 		}
 	}
+	
+	require_once("footer.php");
 ?>

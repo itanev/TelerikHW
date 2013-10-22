@@ -37,4 +37,6 @@
 			echo "Author added.";
 		}
 	}
+	
+	require_once("footer.php");
 ?>

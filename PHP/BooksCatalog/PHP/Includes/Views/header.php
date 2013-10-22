@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	mb_internal_encoding('UTF-8');
 	define('root', $_SERVER['DOCUMENT_ROOT'] . "/Telerik HW/BooksCatalog");
 	
@@ -18,5 +19,8 @@
 	<link rel="stylesheet" type="text/css" href="styles/style.css" />
 </head>
 <body>
-
+	<?php 
+		if(isset($_SESSION['user'])) {
+			echo "Hi " . $_SESSION['user'] . " <a href='/Telerik HW/BooksCatalog/PHP/Includes/Views/Logout.php'>Logout</a>";
+		}
 
